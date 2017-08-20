@@ -36,6 +36,9 @@
     <title><![CDATA[Magic Square]]></title>
     <url>%2F2017%2F08%2F14%2FMagic-Square-Algorithm-Study%2F</url>
     <content type="text"><![CDATA[Philosophy In recreational mathematics, a magic square is a n times n square grid where n is the number of cells on each side filled with distinct positive integers in the range 1,2,…,n^2 such that each cell contains a different integer and the sum of the integers in each row, column and diagonal is equal.The sum is called the magic constant or magic sum of the magic square. A square grid with n cells on each side is said to have order n. FootnotePython code link:https://github.com/JuneSunshine/Magic_Square]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
       <tags>
         <tag>Algorithm</tag>
       </tags>
@@ -44,6 +47,9 @@
     <title><![CDATA[My First Blog]]></title>
     <url>%2F2017%2F08%2F09%2FMy-First-Blog%2F</url>
     <content type="text"><![CDATA[This is a personal blog created by JuneSunshine. This blog will contain mostly software development skills and knowledge. Most of Leetcode blogs are showing optimal solutions.]]></content>
+      <categories>
+        <category>Message</category>
+      </categories>
       <tags>
         <tag>Ramble</tag>
       </tags>
