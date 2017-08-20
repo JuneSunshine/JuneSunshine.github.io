@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[First Missing Positive]]></title>
     <url>%2F2017%2F08%2F17%2FFirst-Missing-Positive%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[41. First Missing Positive Given an unsorted integer array, find the first missing positive integer. For example,Given [1,2,0] return 3,and [3,4,-1,1] return 2. Your algorithm should run in O(n) time and uses constant space. Solution:Put Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/First_Missing_Positive.py]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
       <tags>
         <tag>Leetcode</tag>
       </tags>
@@ -12,6 +15,9 @@
     <title><![CDATA[Permutations]]></title>
     <url>%2F2017%2F08%2F16%2FPermutations%2F</url>
     <content type="text"><![CDATA[(31, 46, 47, 60) PermutationsThis contains: 31 Next Permutation46 Permutations47 Permutations II60 Permutation Sequence 31. Next Permutation Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order). The replacement must be in-place, do not allocate extra memory. Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column. 1,2,3 → 1,3,23,2,1 → 1,2,31,1,5 → 1,5,1 Solution:]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
       <tags>
         <tag>Leetcode</tag>
       </tags>
@@ -20,6 +26,9 @@
     <title><![CDATA[Two Sum]]></title>
     <url>%2F2017%2F08%2F16%2FTwo-Sum%2F</url>
     <content type="text"><![CDATA[1. Two Sum Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. Example:Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9,return [0, 1]. Solution:This appears to be the first and easiest problem on Leetcode. Most people will use the brute force way to solve this problem. However, it is not time efficient. The best way to solve this is using dictionary which means the time efficiency of checking is O(1). Each time a new number is found, it will be added in the dictionary as value while the key is the difference between this number and target. Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/twoSum.py]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
       <tags>
         <tag>Leetcode</tag>
       </tags>
@@ -28,6 +37,9 @@
     <title><![CDATA[Remove Nth From End]]></title>
     <url>%2F2017%2F08%2F15%2FRemove-Nth-From-End%2F</url>
     <content type="text"><![CDATA[19. Remove Nth Node From End of List Given a linked list, remove the nth node from the end of list and return its head. For example, Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2. After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5. Note:Given n will always be valid.Try to do this in one pass. Solution:Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Remove_Nth_From_End.py]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
       <tags>
         <tag>Leetcode</tag>
       </tags>
