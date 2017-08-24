@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[New Semester Plan]]></title>
+    <url>%2F2017%2F08%2F23%2FNew-Semester-Plan%2F</url>
+    <content type="text"><![CDATA[New Semester Plan1.]]></content>
+      <categories>
+        <category>Message</category>
+      </categories>
+      <tags>
+        <tag>Ramble</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[21. Merge Two Sorted Lists]]></title>
     <url>%2F2017%2F08%2F20%2FMerge-Two-Sorted-Lists%2F</url>
-    <content type="text"><![CDATA[Problem Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. Solution]]></content>
+    <content type="text"><![CDATA[Problem Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. SolutionThe base condition is if list1 or list2 is empty, return the other list. Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Merge_Two_Sorted_Lists.py]]></content>
       <categories>
         <category>Tech</category>
       </categories>
