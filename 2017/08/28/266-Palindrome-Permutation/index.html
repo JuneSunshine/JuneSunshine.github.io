@@ -112,18 +112,18 @@
 
 
 
-<meta name="description" content="Problem Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.">
+<meta name="description" content="Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&amp;gt; False, “aab” -&amp;gt; True, “carerac” -&amp;gt; True.">
 <meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="21. Merge Two Sorted Lists">
-<meta property="og:url" content="http://yoursite.com/2017/08/20/Merge-Two-Sorted-Lists/index.html">
+<meta property="og:title" content="266. Palindrome Permutation">
+<meta property="og:url" content="http://yoursite.com/2017/08/28/266-Palindrome-Permutation/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="Problem Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.">
+<meta property="og:description" content="Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&amp;gt; False, “aab” -&amp;gt; True, “carerac” -&amp;gt; True.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-21T13:07:47.000Z">
+<meta property="og:updated_time" content="2017-08-28T16:49:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="21. Merge Two Sorted Lists">
-<meta name="twitter:description" content="Problem Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.">
+<meta name="twitter:title" content="266. Palindrome Permutation">
+<meta name="twitter:description" content="Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&amp;gt; False, “aab” -&amp;gt; True, “carerac” -&amp;gt; True.">
 
 
 
@@ -152,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/20/Merge-Two-Sorted-Lists/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/28/266-Palindrome-Permutation/"/>
 
 
 
 
 
-  <title>21. Merge Two Sorted Lists | JuneSunshine's Blog</title>
+  <title>266. Palindrome Permutation | JuneSunshine's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -366,7 +366,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/Merge-Two-Sorted-Lists/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/28/266-Palindrome-Permutation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuneSunshine">
@@ -383,7 +383,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">21. Merge Two Sorted Lists</h1>
+          <h1 class="post-title" itemprop="name headline">266. Palindrome Permutation</h1>
         
 
         <div class="post-meta">
@@ -395,8 +395,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-20T22:40:49-04:00">
-                2017-08-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-28T12:31:45-04:00">
+                2017-08-28
               </time>
             
 
@@ -436,8 +436,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/20/Merge-Two-Sorted-Lists/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/08/20/Merge-Two-Sorted-Lists/" itemprop="commentCount">0</span> comments
+                <a href="/2017/08/28/266-Palindrome-Permutation/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/08/28/266-Palindrome-Permutation/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -471,11 +471,17 @@
 
       
         <h2><span id="problem">Problem</span></h2><blockquote>
-<p>Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.</p>
+<p>Given a string, determine if a permutation of the string could form a palindrome.</p>
+<p>For example,<br>“code” -&gt; False, “aab” -&gt; True, “carerac” -&gt; True.</p>
 </blockquote>
 <a id="more"></a>
-<h2><span id="solution">Solution</span></h2><p>The base condition is if list1 or list2 is empty, return the other list.</p>
-<p>Python code link:<br><a href="https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Merge_Two_Sorted_Lists.py" target="_blank" rel="external">https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Merge_Two_Sorted_Lists.py</a></p>
+<h2><span id="solution">Solution</span></h2><ol>
+<li><h5><span id="common">Common</span></h5><p>The most common way to solve this problem will be using stack. If a new letter is found, push it into the stack, then pop it out whenever it appears the second time. </p>
+</li>
+<li><h5><span id="optimized">Optimized</span></h5><p>Using dictionary will be the best solution,</p>
+</li>
+</ol>
+<p>Python code link:<br><a href="https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Palindrome_Permutation.py" target="_blank" rel="external">https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Palindrome_Permutation.py</a></p>
 
       
     </div>
@@ -530,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/17/First-Missing-Positive/" rel="next" title="41. First Missing Positive">
-                <i class="fa fa-chevron-left"></i> 41. First Missing Positive
+              <a href="/2017/08/23/New-Semester-Plan/" rel="next" title="New Semester Plan">
+                <i class="fa fa-chevron-left"></i> New Semester Plan
               </a>
             
           </div>
@@ -540,8 +546,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/23/New-Semester-Plan/" rel="prev" title="New Semester Plan">
-                New Semester Plan <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/28/To-My-Love-Chen/" rel="prev" title="To My Love Chen">
+                To My Love Chen <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +585,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://yoursite.com/2017/08/20/Merge-Two-Sorted-Lists/"
+           data-href="http://yoursite.com/2017/08/28/266-Palindrome-Permutation/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -724,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Common</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">Optimized</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -891,9 +897,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/20/Merge-Two-Sorted-Lists/';
-          this.page.identifier = '2017/08/20/Merge-Two-Sorted-Lists/';
-          this.page.title = '21. Merge Two Sorted Lists';
+          this.page.url = 'http://yoursite.com/2017/08/28/266-Palindrome-Permutation/';
+          this.page.identifier = '2017/08/28/266-Palindrome-Permutation/';
+          this.page.title = '266. Palindrome Permutation';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Vincent.disqus.com/embed.js';

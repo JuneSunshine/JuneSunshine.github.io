@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[To My Love Chen]]></title>
+    <url>%2F2017%2F08%2F28%2FTo-My-Love-Chen%2F</url>
+    <content type="text"><![CDATA[Dear Chen: Happy Chinese Valentine’s Day!You are always the love of my life and I hope you are happy forever.This is the first Chinese Valentine’s Day after our marriage, I have not prepared a good present for you but this love message. I promise that I will try my best to give my all to you. No matter what happens, I will always be by your side. Your beloved,Yang]]></content>
+      <categories>
+        <category>Message</category>
+      </categories>
+      <tags>
+        <tag>Ramble</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[266. Palindrome Permutation]]></title>
+    <url>%2F2017%2F08%2F28%2F266-Palindrome-Permutation%2F</url>
+    <content type="text"><![CDATA[Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&gt; False, “aab” -&gt; True, “carerac” -&gt; True. Solution CommonThe most common way to solve this problem will be using stack. If a new letter is found, push it into the stack, then pop it out whenever it appears the second time. OptimizedUsing dictionary will be the best solution, Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Palindrome_Permutation.py]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[New Semester Plan]]></title>
     <url>%2F2017%2F08%2F23%2FNew-Semester-Plan%2F</url>
     <content type="text"><![CDATA[Plan Distributed System (subject) Data Management Independent Study (subject) Tensorflow project Seek for internship and Co-op Programming Challenges Practice Blog Construction]]></content>
