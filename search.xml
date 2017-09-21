@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[206. Reverse Linked List]]></title>
+    <url>%2F2017%2F09%2F19%2F206-Reverse-Linked-List%2F</url>
+    <content type="text"><![CDATA[Problem Reverse a singly linked list. Solution Iterative12345678910111213class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ prev = None while head: curr = head head = head.next curr.next = prev prev = curr return prev Recursive1234567891011121314class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ return self._reverse(head) def _reverse(self, node, prev = None): if not node: return prev n = node.next node.next = prev return self._reverse(n, node)]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[DMID: Reading Papers]]></title>
+    <url>%2F2017%2F09%2F12%2FDMID-Reading-Papers%2F</url>
+    <content type="text"><![CDATA[Papers [Scrapy-based Crawling and User-behavior Characteristics Analysis on Taobao](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6384943) “Web Scraping with Python” by Ryan Mitchell3.]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>DMID</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[70. Climbing Stairs]]></title>
+    <url>%2F2017%2F09%2F05%2F70-Climbing-Stairs%2F</url>
+    <content type="text"><![CDATA[Problem You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positive integer. Solution]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[To My Love Chen]]></title>
     <url>%2F2017%2F08%2F28%2FTo-My-Love-Chen%2F</url>
     <content type="text"><![CDATA[Dear Chen: Happy Chinese Valentine’s Day!You are always the love of my life and I hope you are happy forever.This is the first Chinese Valentine’s Day after our marriage, I have not prepared a good present for you but this love message. I promise that I will try my best to give my all to you. No matter what happens, I will always be by your side. Your beloved,Yang]]></content>
@@ -14,7 +47,7 @@
   <entry>
     <title><![CDATA[266. Palindrome Permutation]]></title>
     <url>%2F2017%2F08%2F28%2F266-Palindrome-Permutation%2F</url>
-    <content type="text"><![CDATA[Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&gt; False, “aab” -&gt; True, “carerac” -&gt; True. Solution CommonThe most common way to solve this problem will be using stack. If a new letter is found, push it into the stack, then pop it out whenever it appears the second time. OptimizedUsing dictionary will be the best solution, Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Palindrome_Permutation.py]]></content>
+    <content type="text"><![CDATA[Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&gt; False, “aab” -&gt; True, “carerac” -&gt; True. Solution CommonThe most common way to solve this problem will be using stack. If a new letter is found, push it into the stack, then pop it out whenever it appears the second time. OptimizedUsing dictionary will be the best solution. Store each letter as a key and the value is the count of its appearance. It is a little faster in this way because the time complexity of search is O(1). Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Palindrome_Permutation.py]]></content>
       <categories>
         <category>Tech</category>
       </categories>
