@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[206. Reverse Linked List]]></title>
-    <url>%2F2017%2F09%2F19%2F206-Reverse-Linked-List%2F</url>
-    <content type="text"><![CDATA[Problem Reverse a singly linked list. Solution Iterative12345678910111213class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ prev = None while head: curr = head head = head.next curr.next = prev prev = curr return prev Recursive1234567891011121314class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ return self._reverse(head) def _reverse(self, node, prev = None): if not node: return prev n = node.next node.next = prev return self._reverse(n, node)]]></content>
+    <title><![CDATA[Pythonic: List Comprehension]]></title>
+    <url>%2F2017%2F09%2F26%2FPythonic-List-Comprehension%2F</url>
+    <content type="text"><![CDATA[Better if List Comprehension else Map and FilterList comprehension is a simple way provided by Python to make another list based on one list. 12345a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]squares = [x**2 for x in a]print(squares)&gt;&gt;&gt;[1, 4, 9, 16, 25, 36, 49, 64, 81, 100] Unless it is a function with only one parameter, list comprehension is much clearer than ‘map’. 1squares = map(lambda x: x**2, a) List comprehension will filter out the elements in original list so that the generated list does not conclude corresponding computational results. For example: 1234even_squares = [x**2 for x in a if x % 2 == 0]print (even_squares)&gt;&gt;&gt;[4, 16, 36, 64, 100] Of course, the combination of filter and map functions can do the work too, but the code will be harder to read. 12alt = map(lambda x: x**2, filter(lambda x: x % 2 == 0, a)assert even_squares == list(alt) The last thing to mention is that dict and set also have similar mechanism with list. We can use this while writing algorithms. 12345678club_ranks = &#123;'Chelsea': 1, 'Man United': 2, 'Liverpool': 3&#125;rank_dict = &#123;rank: name for name, rank in club_ranks.items()&#125;club_len_set = &#123;len(name) for name in rank_dict.values()&#125;print (rank_dict)print (club_len_set)&gt;&gt;&gt;&#123;1: 'Chelsea', 2: 'Man United', 3: 'Liverpool'&#125;&#123;7, 10, 9&#125; Key Points List comprehension is clearer than built-in map and filter functions List comprehension can skip inputing some elements in list, it can also be done by map but only if combined with filter Dict and set also support comprehension]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Pythonic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[256. Paint House]]></title>
+    <url>%2F2017%2F09%2F26%2F256-Paint-House%2F</url>
+    <content type="text"><![CDATA[Problem There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color. The cost of painting each house with a certain color is represented by a n x 3 cost matrix. For example, costs[0][0] is the cost of painting house 0 with color red; costs[1][2] is the cost of painting house 1 with color green, and so on… Find the minimum cost to paint all houses. Note:All costs are positive integers. SolutionThis is a typical dynamic programming problem. 123456789101112131415def minCost(self, costs): size = len(costs) if size == 0: return 0 pre = costs[0][:] now = [0]*3 for i in xrange(size-1): now[0] = min(pre[1], pre[2]) + costs[i+1][0] now[1] = min(pre[0], pre[2]) + costs[i+1][1] now[2] = min(pre[0], pre[1]) + costs[i+1][2] pre[:] = now[:] return min(pre)]]></content>
       <categories>
         <category>Tech</category>
       </categories>
@@ -12,14 +23,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[DMID: Reading Papers]]></title>
-    <url>%2F2017%2F09%2F12%2FDMID-Reading-Papers%2F</url>
-    <content type="text"><![CDATA[Papers [Scrapy-based Crawling and User-behavior Characteristics Analysis on Taobao](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6384943) “Web Scraping with Python” by Ryan Mitchell3.]]></content>
+    <title><![CDATA[206. Reverse Linked List]]></title>
+    <url>%2F2017%2F09%2F19%2F206-Reverse-Linked-List%2F</url>
+    <content type="text"><![CDATA[Problem Reverse a singly linked list. Solution Iterative12345678910111213class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ prev = None while head: curr = head head = head.next curr.next = prev prev = curr return prev Recursive1234567891011121314class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ return self._reverse(head) def _reverse(self, node, prev = None): if not node: return prev n = node.next node.next = prev return self._reverse(n, node)]]></content>
       <categories>
         <category>Tech</category>
       </categories>
       <tags>
-        <tag>DMID</tag>
+        <tag>Leetcode</tag>
       </tags>
   </entry>
   <entry>
