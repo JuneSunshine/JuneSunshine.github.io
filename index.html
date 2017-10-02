@@ -468,14 +468,17 @@
 
       
         
-          <h2 id="No-More-Than-Two-Expressions"><a href="#No-More-Than-Two-Expressions" class="headerlink" title="No More Than Two Expressions"></a>No More Than Two Expressions</h2>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/27/Pythonic-List-Comprehension-Limits/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h2><span id="no-more-than-two-expressions-in-list-comprehension">No More Than Two Expressions In List Comprehension</span></h2><p>List comprehension supports multiple loops. For example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">matrix = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]</div><div class="line">flat = [x <span class="keyword">for</span> row <span class="keyword">in</span> matrix <span class="keyword">for</span> x <span class="keyword">in</span> row]</div><div class="line"><span class="keyword">print</span> (flat)</div><div class="line">&gt;&gt;&gt;</div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div></pre></td></tr></table></figure>
+<p>Another example would be creating a two-layer depth new list by inputing list:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">squared = [[x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> row] <span class="keyword">for</span> row <span class="keyword">in</span> matrix]</div><div class="line">print(squared)</div><div class="line">&gt;&gt;&gt;</div><div class="line">[[<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>],[<span class="number">16</span>,<span class="number">25</span>,<span class="number">36</span>],[<span class="number">49</span>,<span class="number">64</span>,<span class="number">81</span>]]</div></pre></td></tr></table></figure>
+<p>If there is another loop in expression, list comprehension will become longer. It will be clearer only if splitting it into multiple lines:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">my_lists = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],...]</div><div class="line">flat = [x <span class="keyword">for</span> sublist1 <span class="keyword">in</span> my_lists</div><div class="line">        <span class="keyword">for</span> sublist2 <span class="keyword">in</span> sublist1</div><div class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> sublist2]</div></pre></td></tr></table></figure>
+<p>From above we can tell that list comprehension under this condition is not simpler than the common way.</p>
+<p>Therefore, it is not suggested that using list comprehension with more than two expressions.</p>
+
+          
         
       
     </div>
