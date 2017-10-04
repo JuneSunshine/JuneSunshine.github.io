@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Announcement: New Project Website]]></title>
+    <url>%2F2017%2F10%2F04%2FAnnouncement-New-Project-Website%2F</url>
+    <content type="text"><![CDATA[A New Website Builtlijingyang.me was recently built for project showcase of CSCI 731 class. It is planned to be used for showing all the projects I have done so far in the future, but currently there is only one project on the website. I will also post my bio and social links on it. You can contact me in any ways you like if you are interested at my works. Websites’ Current Functionstofuser.com:Personal Blog, main functions are: Publishing tech related interesting topics, especially coding stuff Publishing some rambles Give a place to have discussions with someone who has same interests with me lijingyang.me:Project Site, main functions are: Projects showcases Give a better way for recruiters to know me]]></content>
+      <categories>
+        <category>Message</category>
+      </categories>
+      <tags>
+        <tag>Announcements</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Pythonic: Unnecessary Else]]></title>
+    <url>%2F2017%2F10%2F04%2FPythonic-Unnecessary-Else%2F</url>
+    <content type="text"><![CDATA[Unique Python ElsePython provides a function which is not supported in most of primary languages: To use else statement right behind the loop. 123456789for i in range(3): print ("Loop %s" % i)else: print ("Else what?!")&gt;&gt;&gt;Loop 0Loop 1Loop 2Else what?! You might think this is interesting.]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Pythonic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pythonic: Use Enumerate() Instead of Range()]]></title>
     <url>%2F2017%2F10%2F03%2FPythonic-Use-Enumerate-Instead-of-Range%2F</url>
     <content type="text"><![CDATA[Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10): print (i) For strings, we can directly iterate through the list: 123club_list = ['Chelsea', 'Liverpool', 'Barcelona', 'Juventus']for club in club_list: print ("%s is the best!" % club) Sometimes we want to know the index of current element in list while iterating. For example, print the ordered list of football clubs: 123for i in range(len(club_list)): club = club_list[i] print ("%d: %s" % (i+1, club)) However, this method seems a little redundant and also hard to understand. In this situation, Python provides a built-in function: enumerate(). It is a simpler and more elegant way to deal with this. 1234567for i, club in enumerate(club_list): print ("%d: %s" % (i+1, club))&gt;&gt;&gt;1: Chelsea2: Liverpool3: Barcelona4: Juventus We can even assign the starting value of counting, which will make the code even simpler: 12for i, club in enumerate(cub_list, 1): print ("%d: %s" % (i, club)) Key Points: enumerate() offers a simple way of retrieving each element’s index during iteration Try to use enumerate() to replace range() if index is needed We can use a second parameter in enumerate() to assign the starting value of index (0 as default)]]></content>
@@ -14,7 +36,7 @@
   <entry>
     <title><![CDATA[Pythonic: Use of Zip Function]]></title>
     <url>%2F2017%2F10%2F03%2FPythonic-Use-of-Zip-Function%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[This needs more time to be doneUnder Construction…]]></content>
       <categories>
         <category>Tech</category>
       </categories>
