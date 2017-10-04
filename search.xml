@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Pythonic: Use Enumerate() Instead of Range()]]></title>
+    <url>%2F2017%2F10%2F03%2FPythonic-Use-Enumerate-Instead-of-Range%2F</url>
+    <content type="text"><![CDATA[Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10): print (i) For strings, we can directly iterate through the list: 123club_list = ['Chelsea', 'Liverpool', 'Barcelona', 'Juventus']for club in club_list: print ("%s is the best!" % club) Sometimes we want to know the index of current element in list while iterating. For example, print the ordered list of football clubs: 123for i in range(len(club_list)): club = club_list[i] print ("%d: %s" % (i+1, club)) However, this method seems a little redundant and also hard to understand. In this situation, Python provides a built-in function: enumerate(). It is a simpler and more elegant way to deal with this. 1234567for i, club in enumerate(club_list): print ("%d: %s" % (i+1, club))&gt;&gt;&gt;1: Chelsea2: Liverpool3: Barcelona4: Juventus We can even assign the starting value of counting, which will make the code even simpler: 12for i, club in enumerate(cub_list, 1): print ("%d: %s" % (i, club)) Key Points: enumerate() offers a simple way of retrieving each element’s index during iteration Try to use enumerate() to replace range() if index is needed We can use a second parameter in enumerate() to assign the starting value of index (0 as default)]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Pythonic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Pythonic: Use of Zip Function]]></title>
+    <url>%2F2017%2F10%2F03%2FPythonic-Use-of-Zip-Function%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Pythonic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pythonic: List Comprehension Limits]]></title>
     <url>%2F2017%2F09%2F27%2FPythonic-List-Comprehension-Limits%2F</url>
     <content type="text"><![CDATA[No More Than Two Expressions In List ComprehensionList comprehension supports multiple loops. For example: 12345matrix = [[1,2,3],[4,5,6],[7,8,9]]flat = [x for row in matrix for x in row]print (flat)&gt;&gt;&gt;[1,2,3,4,5,6,7,8,9] Another example would be creating a two-layer depth new list by inputing list: 1234squared = [[x**2 for x in row] for row in matrix]print(squared)&gt;&gt;&gt;[[1,4,9],[16,25,36],[49,64,81]] If there is another loop in expression, list comprehension will become longer. It will be clearer only if splitting it into multiple lines: 1234my_lists = [[1,2,3],[4,5,6],...]flat = [x for sublist1 in my_lists for sublist2 in sublist1 for x in sublist2] From above we can tell that list comprehension under this condition is not simpler than the common way. Therefore, it is not suggested that using list comprehension with more than two expressions.]]></content>
