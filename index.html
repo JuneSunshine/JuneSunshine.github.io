@@ -366,169 +366,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/Pythonic-List-Slice/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="JuneSunshine">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JuneSunshine's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/07/Pythonic-List-Slice/" itemprop="url">Pythonic: List Slice</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-07T15:30:29-04:00">
-                2017-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index">
-                    <span itemprop="name">Tech</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/07/Pythonic-List-Slice/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/10/07/Pythonic-List-Slice/" itemprop="commentCount">0</span> comments
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="Fundamentals"><a href="#Fundamentals" class="headerlink" title="Fundamentals"></a>Fundamentals</h2><p>There are three different parts of list slice operation: start, end, stride.</p>
-<p>For easier understanding, we can imagine a whole list is represented as alist[::].</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">alist = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]</div><div class="line"></div><div class="line"><span class="comment"># assume alist[a:b:c]</span></div><div class="line"><span class="comment"># a - start</span></div><div class="line"><span class="comment"># b - end</span></div><div class="line"><span class="comment"># c - stride</span></div><div class="line"><span class="comment"># As default, a is 0, b is len(alist) and c is 1 if we don't assign </span></div><div class="line"><span class="comment"># any of them a number. Therefore, we usually leave the space if we </span></div><div class="line"><span class="comment"># want default values. As follows:</span></div><div class="line"></div><div class="line"><span class="keyword">assert</span> alist == alist[::]</div><div class="line"><span class="keyword">assert</span> alist[:<span class="number">3</span>] == alist[<span class="number">0</span>:<span class="number">3</span>] </div><div class="line"><span class="keyword">assert</span> alist[<span class="number">3</span>:] == alist[<span class="number">3</span>:len(alist)]</div></pre></td></tr></table></figure>
-<p>If we want to start counting from the end, negative values can be used to do the job.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a[:]        <span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']</span></div><div class="line">a[:<span class="number">5</span>]       <span class="comment"># ['a', 'b', 'c', 'd', 'e']</span></div><div class="line">a[:<span class="number">-1</span>]      <span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f', 'g']</span></div><div class="line">a[<span class="number">4</span>:]       <span class="comment">#                     ['e', 'f', 'g']</span></div><div class="line">a[<span class="number">-3</span>:]      <span class="comment">#                          ['f', 'g', 'h']</span></div><div class="line">a[<span class="number">2</span>:<span class="number">5</span>]      <span class="comment">#           ['c', 'd', 'e']</span></div><div class="line">a[<span class="number">2</span>:<span class="number">-1</span>]     <span class="comment">#           ['c', 'd', 'e', 'f', 'g']</span></div><div class="line">a[<span class="number">-3</span>:<span class="number">-1</span>]    <span class="comment">#                          ['f', 'g']</span></div></pre></td></tr></table></figure>
-<p>Even if number out of index, there won’t be an issue during list slicing. On the contrary, it will throw exception during visiting single element.</p>
-<p>What need to be paid attention to is that a new list will be created after slicing the original list. It means the system is still maintaining the reference towards each object in original list. Therefore, any modifications and changes made on the new list after list slicing will not affect original list. For example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">b = a[:<span class="number">4</span>]</div><div class="line"><span class="keyword">print</span> (<span class="string">"Before:   "</span>, b)</div><div class="line">b[<span class="number">0</span>] = <span class="string">'z'</span></div><div class="line"><span class="keyword">print</span> (<span class="string">"After:    "</span>, b)</div><div class="line"><span class="keyword">print</span> (<span class="string">"Original: "</span>)</div><div class="line"></div><div class="line">&gt;&gt;&gt;</div><div class="line">Before:   [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div><div class="line">After:    [<span class="string">'z'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div><div class="line">Original: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]</div></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/07/Pythonic-List-Slice/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/04/Announcement-New-Project-Website/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -648,6 +485,169 @@
 </ul>
 
           
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/Pythonic-List-Slice/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JuneSunshine">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JuneSunshine's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/07/Pythonic-List-Slice/" itemprop="url">Pythonic: List Slice</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-07T15:30:29-04:00">
+                2017-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                    <span itemprop="name">Tech</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/07/Pythonic-List-Slice/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/10/07/Pythonic-List-Slice/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Fundamentals"><a href="#Fundamentals" class="headerlink" title="Fundamentals"></a>Fundamentals</h2><p>There are three different parts of list slice operation: start, end, stride.</p>
+<p>For easier understanding, we can imagine a whole list is represented as alist[::].</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">alist = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]</div><div class="line"></div><div class="line"><span class="comment"># assume alist[a:b:c]</span></div><div class="line"><span class="comment"># a - start</span></div><div class="line"><span class="comment"># b - end</span></div><div class="line"><span class="comment"># c - stride</span></div><div class="line"><span class="comment"># As default, a is 0, b is len(alist) and c is 1 if we don't assign </span></div><div class="line"><span class="comment"># any of them a number. Therefore, we usually leave the space if we </span></div><div class="line"><span class="comment"># want default values. As follows:</span></div><div class="line"></div><div class="line"><span class="keyword">assert</span> alist == alist[::]</div><div class="line"><span class="keyword">assert</span> alist[:<span class="number">3</span>] == alist[<span class="number">0</span>:<span class="number">3</span>] </div><div class="line"><span class="keyword">assert</span> alist[<span class="number">3</span>:] == alist[<span class="number">3</span>:len(alist)]</div></pre></td></tr></table></figure>
+<p>If we want to start counting from the end, negative values can be used to do the job.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a[:]        <span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']</span></div><div class="line">a[:<span class="number">5</span>]       <span class="comment"># ['a', 'b', 'c', 'd', 'e']</span></div><div class="line">a[:<span class="number">-1</span>]      <span class="comment"># ['a', 'b', 'c', 'd', 'e', 'f', 'g']</span></div><div class="line">a[<span class="number">4</span>:]       <span class="comment">#                     ['e', 'f', 'g']</span></div><div class="line">a[<span class="number">-3</span>:]      <span class="comment">#                          ['f', 'g', 'h']</span></div><div class="line">a[<span class="number">2</span>:<span class="number">5</span>]      <span class="comment">#           ['c', 'd', 'e']</span></div><div class="line">a[<span class="number">2</span>:<span class="number">-1</span>]     <span class="comment">#           ['c', 'd', 'e', 'f', 'g']</span></div><div class="line">a[<span class="number">-3</span>:<span class="number">-1</span>]    <span class="comment">#                          ['f', 'g']</span></div></pre></td></tr></table></figure>
+<p>Even if number out of index, there won’t be an issue during list slicing. On the contrary, it will throw exception during visiting single element.</p>
+<p>What need to be paid attention to is that a new list will be created after slicing the original list. It means the system is still maintaining the reference towards each object in original list. Therefore, any modifications and changes made on the new list after list slicing will not affect original list. For example:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">b = a[:<span class="number">4</span>]</div><div class="line"><span class="keyword">print</span> (<span class="string">"Before:   "</span>, b)</div><div class="line">b[<span class="number">0</span>] = <span class="string">'z'</span></div><div class="line"><span class="keyword">print</span> (<span class="string">"After:    "</span>, b)</div><div class="line"><span class="keyword">print</span> (<span class="string">"Original: "</span>)</div><div class="line"></div><div class="line">&gt;&gt;&gt;</div><div class="line">Before:   [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div><div class="line">After:    [<span class="string">'z'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div><div class="line">Original: [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>, <span class="string">'g'</span>, <span class="string">'h'</span>]</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/07/Pythonic-List-Slice/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
