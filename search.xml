@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Pythonic: List Slice]]></title>
+    <url>%2F2017%2F10%2F07%2FPythonic-List-Slice%2F</url>
+    <content type="text"><![CDATA[FundamentalsThere are three different parts of list slice operation: start, end, stride. For easier understanding, we can imagine a whole list is represented as alist[::]. 12345678910111213alist = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']# assume alist[a:b:c]# a - start# b - end# c - stride# As default, a is 0, b is len(alist) and c is 1 if we don't assign # any of them a number. Therefore, we usually leave the space if we # want default values. As follows:assert alist == alist[::]assert alist[:3] == alist[0:3] assert alist[3:] == alist[3:len(alist)] If we want to start counting from the end, negative values can be used to do the job. 12345678a[:] # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']a[:5] # ['a', 'b', 'c', 'd', 'e']a[:-1] # ['a', 'b', 'c', 'd', 'e', 'f', 'g']a[4:] # ['e', 'f', 'g']a[-3:] # ['f', 'g', 'h']a[2:5] # ['c', 'd', 'e']a[2:-1] # ['c', 'd', 'e', 'f', 'g']a[-3:-1] # ['f', 'g'] Even if number out of index, there won’t be an issue during list slicing. On the contrary, it will throw exception during visiting single element. What need to be paid attention to is that a new list will be created after slicing the original list. It means ==the system is still maintaining the reference towards each object in original list==. Therefore, ==any modifications and changes made on the new list after list slicing will not affect original list==. For example: 12345678910b = a[:4]print ("Before: ", b)b[0] = 'z'print ("After: ", b)print ("Original: ")&gt;&gt;&gt;Before: ['a', 'b', 'c', 'd']After: ['z', 'b', 'c', 'd']Original: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Pythonic</tag>
+        <tag>List</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Announcement: New Project Website]]></title>
     <url>%2F2017%2F10%2F04%2FAnnouncement-New-Project-Website%2F</url>
     <content type="text"><![CDATA[A New Website Builtlijingyang.me was recently built for project showcase of CSCI 731 class. It is planned to be used for showing all the projects I have done so far in the future, but currently there is only one project on the website. I will also post my bio and social links on it. You can contact me in any ways you like if you are interested at my works. Websites’ Current Functionstofuser.com:Personal Blog, main functions are: Publishing tech related interesting topics, especially coding stuff Publishing some rambles Give a place to have discussions with someone who has same interests with me lijingyang.me:Project Site, main functions are: Projects showcases Give a better way for recruiters to know me]]></content>
@@ -86,6 +98,7 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>Linked List</tag>
       </tags>
   </entry>
   <entry>
