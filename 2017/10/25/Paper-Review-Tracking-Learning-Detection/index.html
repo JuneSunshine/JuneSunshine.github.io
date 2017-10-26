@@ -118,18 +118,21 @@
 
 
 
-<meta name="description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Track">
+<meta name="description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
 <meta name="keywords" content="Paper Review,Computer Vision">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Paper Review: Tracking-Learning-Detection">
 <meta property="og:url" content="http://yoursite.com/2017/10/25/Paper-Review-Tracking-Learning-Detection/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Track">
+<meta property="og:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-26T02:45:59.000Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-WY_9_SIvCRM/WfHjsdJ0VPI/AAAAAAAAAfw/3qsbbSixrpkpG6Td0S6WBSadvZhSRRTzwCHMYCw/I/fb-error.png">
+<meta property="og:updated_time" content="2017-10-26T13:33:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paper Review: Tracking-Learning-Detection">
-<meta name="twitter:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Track">
+<meta name="twitter:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png">
 
 
 
@@ -481,6 +484,7 @@
       
         <h2><span id="introduction">Introduction</span></h2><p>Tracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal.</p>
 <p>TLD algorithm consists of three modules: Tracker, Detector and Learn.</p>
+<p><img src="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png" alt="TLD-workflow"></p>
 <p>Tracker is used to track object movement in continuous frames. It is only efﬁcient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module.</p>
 <p>Detector is used to detect the error generated from tracker. It will automatically correct the error when it reaches a certain threshold.</p>
 <p>Learning iteratively trains classiﬁer based on positive and negative samples generated from tracker and detector to improve detector’s accuracy.</p>
@@ -494,6 +498,7 @@
 <p>Median-Flow algorithm:</p>
 <p>The author assumes that a good tracking algorithm should have “forward-backward consistency”, which means no matter it tracks in forward of time or backward, the trajectory should be the same.</p>
 <p>Therefore, he invents an error metric called “F-B Error”:</p>
+<p><img src="https://lh3.googleusercontent.com/-WY_9_SIvCRM/WfHjsdJ0VPI/AAAAAAAAAfw/3qsbbSixrpkpG6Td0S6WBSadvZhSRRTzwCHMYCw/I/fb-error.png" alt="fb-error"></p>
 <p>The Euclidean distance between current position at k frame and the forward-backward prediction position at k frame from k+p frame.</p>
 <p>This tracking algorithm uses Lucas-Kanade tracker.</p>
 <p><strong>DETECTOR</strong>:</p>
