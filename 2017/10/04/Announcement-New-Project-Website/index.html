@@ -20,6 +20,7 @@
 
 
 
+
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -91,9 +92,14 @@
 
 
 
+
+
+
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+<link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Announcements," />
@@ -120,7 +126,7 @@
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
 <meta property="og:description" content="A New Website Builtlijingyang.me was recently built for project showcase of CSCI 731 class.  It is planned to be used for showing all the projects I have done so far in the future, but currently there">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-11T15:16:59.000Z">
+<meta property="og:updated_time" content="2017-10-25T19:31:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Announcement: New Project Website">
 <meta name="twitter:description" content="A New Website Builtlijingyang.me was recently built for project showcase of CSCI 731 class.  It is planned to be used for showing all the projects I have done so far in the future, but currently there">
@@ -149,6 +155,8 @@
     }
   };
 </script>
+
+
 
 
 
@@ -218,7 +226,8 @@
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
+      <div class="header-inner"><div class="top-scroll-bar"></div>
+<div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
@@ -481,13 +490,52 @@
 </ul>
 <p><a href="">lijingyang.me</a>:<br>Project Site, main functions are:</p>
 <ul>
-<li>Projects showcases</li>
-<li>Give a better way for recruiters to know me</li>
+<li>Projects Proposal</li>
+<li>Projects Demo</li>
 </ul>
 
       
     </div>
     
+    
+    
+
+    
+    
+      <div>
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS Library sweetalert Path can be changed -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>Title:</span><a href="/2017/10/04/Announcement-New-Project-Website/">Announcement: New Project Website</a></p>
+  <p><span>Author:</span><a href="/" title="Visit JuneSunshine personal blog">JuneSunshine</a></p>
+  <p><span>Release:</span>2017/10/04 - 00:10</p>
+  <p><span>Update:</span>2017/10/25 - 15:10</p>
+  <p><span>URL:</span><a href="/2017/10/04/Announcement-New-Project-Website/" title="Announcement: New Project Website">http://yoursite.com/2017/10/04/Announcement-New-Project-Website/</a>
+    <span class="copy-path"  title="Copy Link"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2017/10/04/Announcement-New-Project-Website/"  aria-label="Copied！"></i></span>
+  </p>
+  <p><span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Signature-No Business Use-No Modification 4.0 International</a> Please keep original link and author if referred.</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+  clipboard.on('success', $(function(){
+    $(".fa-clipboard").click(function(){
+    swal({   
+      title: "",   
+      text: 'Copied',   
+      html: false,
+      timer: 500,   
+      showConfirmButton: false
+      });
+    });
+    }));  
+</script>
+
+      </div>
     
     
 
@@ -640,7 +688,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -662,7 +710,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -823,10 +871,13 @@
 
 
 
-  
 
 
+
+
+
   
+
 
 
 
@@ -854,10 +905,10 @@
   <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  <script type="text/javascript" src="/lib/nprogress/nprogress.js"></script>
 
   
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
@@ -867,6 +918,7 @@
 
   <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
+  <script type="text/javascript" src="/js/src/custom/custom.js?v=5.1.2"></script>
 
 
   

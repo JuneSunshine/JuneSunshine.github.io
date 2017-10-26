@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Paper Review: Tracking-Learning-Detection]]></title>
+    <url>%2F2017%2F10%2F25%2FPaper-Review-Tracking-Learning-Detection%2F</url>
+    <content type="text"><![CDATA[IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Tracker is used to track object movement in continuous frames. It is only efﬁcient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module. Detector is used to detect the error generated from tracker. It will automatically correct the error when it reaches a certain threshold. Learning iteratively trains classiﬁer based on positive and negative samples generated from tracker and detector to improve detector’s accuracy. Methods Tracker: Median-Flow Algorithm Detector: Cascaded Classiﬁer Learning: P-N Learning TRACKER: Median-Flow algorithm: The author assumes that a good tracking algorithm should have “forward-backward consistency”, which means no matter it tracks in forward of time or backward, the trajectory should be the same. Therefore, he invents an error metric called “F-B Error”: The Euclidean distance between current position at k frame and the forward-backward prediction position at k frame from k+p frame. This tracking algorithm uses Lucas-Kanade tracker. DETECTOR: Cascaded Classiﬁer includes: Path Variance Classiﬁer Compute variance of each patch and label the half with lower values as negative samples Ensemble Classiﬁer (Random Ferns Classiﬁer) Similar to random forest, but each layer of the tree has the same threshold for each half of subtrees. Nearest Neighbor Classiﬁer Compute the similarity of the new sample, label it as positive if the value is beyond 0.6 LEARNING: P-Expert: detect false negative samples N-Expert: detect false positive samples “Structure” is a concept brought up by author, it has two meanings: The target can only appear at one place at each frame The movement of target should be continuous in adjacent frames ConclusionThe best part of this algorithm in my opinion is the structure. As we can tell, detector is the supervisor of tracker, because detector needs to correct tracker’s results; While tracker is the supervisor of training detector, because it needs to supervise using the detector’s classiﬁcation results based on tracker’s results. To conclude, a program, instead of a human being, is used to supervise another program’s training process. This is why P-N learning is called semi-supervised learning.]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Paper Review</tag>
+        <tag>Computer Vision</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pythonic: List Slice]]></title>
     <url>%2F2017%2F10%2F07%2FPythonic-List-Slice%2F</url>
     <content type="text"><![CDATA[FundamentalsThere are three different parts of list slice operation: start, end, stride. For easier understanding, we can imagine a whole list is represented as alist[::]. 12345678910111213alist = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']# assume alist[a:b:c]# a - start# b - end# c - stride# As default, a is 0, b is len(alist) and c is 1 if we don't assign # any of them a number. Therefore, we usually leave the space if we # want default values. As follows:assert alist == alist[::]assert alist[:3] == alist[0:3] assert alist[3:] == alist[3:len(alist)] If we want to start counting from the end, negative values can be used to do the job. 12345678a[:] # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']a[:5] # ['a', 'b', 'c', 'd', 'e']a[:-1] # ['a', 'b', 'c', 'd', 'e', 'f', 'g']a[4:] # ['e', 'f', 'g']a[-3:] # ['f', 'g', 'h']a[2:5] # ['c', 'd', 'e']a[2:-1] # ['c', 'd', 'e', 'f', 'g']a[-3:-1] # ['f', 'g'] Even if number out of index, there won’t be an issue during list slicing. On the contrary, it will throw exception during visiting single element. What need to be paid attention to is that a new list will be created after slicing the original list. It means the system is still maintaining the reference towards each object in original list. Therefore, any modifications and changes made on the new list after list slicing will not affect original list. For example: 12345678910b = a[:4]print ("Before: ", b)b[0] = 'z'print ("After: ", b)print ("Original: ")&gt;&gt;&gt;Before: ['a', 'b', 'c', 'd']After: ['z', 'b', 'c', 'd']Original: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']]]></content>
@@ -15,7 +27,7 @@
   <entry>
     <title><![CDATA[Announcement: New Project Website]]></title>
     <url>%2F2017%2F10%2F04%2FAnnouncement-New-Project-Website%2F</url>
-    <content type="text"><![CDATA[A New Website Builtlijingyang.me was recently built for project showcase of CSCI 731 class. It is planned to be used for showing all the projects I have done so far in the future, but currently there is only one project on the website. I will also post my bio and social links on it. You can contact me in any ways you like if you are interested at my works. Websites’ Current Functionstofuser.com:Personal Blog, main functions are: Publishing tech related interesting topics, especially coding stuff Publishing some rambles Give a place to have discussions with someone who has same interests with me lijingyang.me:Project Site, main functions are: Projects showcases Give a better way for recruiters to know me]]></content>
+    <content type="text"><![CDATA[A New Website Builtlijingyang.me was recently built for project showcase of CSCI 731 class. It is planned to be used for showing all the projects I have done so far in the future, but currently there is only one project on the website. I will also post my bio and social links on it. You can contact me in any ways you like if you are interested at my works. Websites’ Current Functionstofuser.com:Personal Blog, main functions are: Publishing tech related interesting topics, especially coding stuff Publishing some rambles Give a place to have discussions with someone who has same interests with me lijingyang.me:Project Site, main functions are: Projects Proposal Projects Demo]]></content>
       <categories>
         <category>Message</category>
       </categories>
@@ -110,6 +122,7 @@
       </categories>
       <tags>
         <tag>Leetcode</tag>
+        <tag>Dynamic Programming</tag>
       </tags>
   </entry>
   <entry>
@@ -203,7 +216,7 @@
   <entry>
     <title><![CDATA[Magic Square]]></title>
     <url>%2F2017%2F08%2F14%2FMagic-Square-Algorithm-Study%2F</url>
-    <content type="text"><![CDATA[Philosophy In recreational mathematics, a magic square is a n times n square grid where n is the number of cells on each side filled with distinct positive integers in the range 1,2,…,n^2 such that each cell contains a different integer and the sum of the integers in each row, column and diagonal is equal.The sum is called the magic constant or magic sum of the magic square. A square grid with n cells on each side is said to have order n. FootnotePython code link:https://github.com/JuneSunshine/Magic_Square]]></content>
+    <content type="text"><![CDATA[Philosophy In recreational mathematics, a magic square is a n times n square grid where n is the number of cells on each side filled with distinct positive integers in the range 1,2,…,n^2 such that each cell contains a different integer and the sum of the integers in each row, column and diagonal is equal.The sum is called the magic constant or magic sum of the magic square. A square grid with n cells on each side is said to have order n. MethodsThere are three different methods applied to solve this puzzle.First of all, all situations can be divided into three categories: Odd by Odd Mezirac method : Start with filling the middle slot of first row | 8 | 1 | 6 || — | — | — || 3 | 5 | 7 || 4 | 9 | 2 | Python code link:https://github.com/JuneSunshine/Magic_Square]]></content>
       <categories>
         <category>Tech</category>
       </categories>
