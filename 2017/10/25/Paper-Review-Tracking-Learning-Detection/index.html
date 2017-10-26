@@ -128,7 +128,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-WY_9_SIvCRM/WfHjsdJ0VPI/AAAAAAAAAfw/3qsbbSixrpkpG6Td0S6WBSadvZhSRRTzwCHMYCw/I/fb-error.png">
-<meta property="og:updated_time" content="2017-10-26T13:33:38.000Z">
+<meta property="og:updated_time" content="2017-10-26T14:06:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paper Review: Tracking-Learning-Detection">
 <meta name="twitter:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
@@ -485,9 +485,9 @@
         <h2><span id="introduction">Introduction</span></h2><p>Tracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal.</p>
 <p>TLD algorithm consists of three modules: Tracker, Detector and Learn.</p>
 <p><img src="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png" alt="TLD-workflow"></p>
-<p>Tracker is used to track object movement in continuous frames. It is only efﬁcient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module.</p>
+<p>Tracker is used to track object movement in continuous frames. It is only efficient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module.</p>
 <p>Detector is used to detect the error generated from tracker. It will automatically correct the error when it reaches a certain threshold.</p>
-<p>Learning iteratively trains classiﬁer based on positive and negative samples generated from tracker and detector to improve detector’s accuracy.</p>
+<p>Learning iteratively trains classifier based on positive and negative samples generated from tracker and detector to improve detector’s accuracy.</p>
 <a id="more"></a>
 <h2><span id="methods">Methods</span></h2><ul>
 <li>Tracker: Median-Flow Algorithm </li>
@@ -504,26 +504,26 @@
 <p><strong>DETECTOR</strong>:</p>
 <p>Cascaded Classiﬁer includes:</p>
 <ol>
-<li><p>Path Variance Classiﬁer</p>
+<li><p>Path Variance Classifier</p>
 <p> Compute variance of each patch and label the half with lower values as negative samples</p>
 </li>
-<li><p>Ensemble Classiﬁer (Random Ferns Classiﬁer)</p>
+<li><p>Ensemble Classifier (Random Ferns Classifier)</p>
 <p> Similar to random forest, but each layer of the tree has the same threshold for each half of subtrees.</p>
 </li>
-<li><p>Nearest Neighbor Classiﬁer</p>
+<li><p>Nearest Neighbor Classifier</p>
 <p> Compute the similarity of the new sample, label it as positive if the value is beyond</p>
 </li>
 </ol>
 <p>0.6</p>
 <p><strong>LEARNING</strong>:</p>
-<p>P-Expert: detect false negative samples N-Expert: detect false positive samples “Structure” is a concept brought up by author, it has two meanings:</p>
+<p>P-Expert: detect false negative samples<br>N-Expert: detect false positive samples<br>“Structure” is a concept brought up by author, it has two meanings:</p>
 <ol>
 <li><p>The target can only appear at one place at each frame</p>
 </li>
 <li><p>The movement of target should be continuous in adjacent frames</p>
 </li>
 </ol>
-<h2><span id="conclusion">Conclusion</span></h2><p>The best part of this algorithm in my opinion is the structure. As we can tell, detector is the supervisor of tracker, because detector needs to correct tracker’s results; While tracker is the supervisor of training detector, because it needs to supervise using the detector’s classiﬁcation results based on tracker’s results. To conclude, a program, instead of a human being, is used to supervise another program’s training process. This is why P-N learning is called semi-supervised learning.</p>
+<h2><span id="conclusion">Conclusion</span></h2><p>The best part of this algorithm in my opinion is the structure. As we can tell, detector is the supervisor of tracker, because detector needs to correct tracker’s results; While tracker is the supervisor of training detector, because it needs to supervise using the detector’s classification results based on tracker’s results.<br>To conclude, a program, instead of a human being, is used to supervise another program’s training process. This is also why P-N learning is called semi-supervised learning.</p>
 
       
     </div>
