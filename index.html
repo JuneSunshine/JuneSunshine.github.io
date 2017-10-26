@@ -816,7 +816,6 @@
         
           <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>Tracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal.</p>
 <p>TLD algorithm consists of three modules: Tracker, Detector and Learn.</p>
-<p><img src="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png" alt="TLD-workflow"></p>
 <p>Tracker is used to track object movement in continuous frames. It is only efficient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module.</p>
 <p>Detector is used to detect the error generated from tracker. It will automatically correct the error when it reaches a certain threshold.</p>
 <p>Learning iteratively trains classifier based on positive and negative samples generated from tracker and detector to improve detector’s accuracy.</p>

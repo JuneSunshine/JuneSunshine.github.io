@@ -118,22 +118,22 @@
 
 
 
-<meta name="description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
+<meta name="description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Track">
 <meta name="keywords" content="Paper Review,Computer Vision">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Paper Review: Tracking-Learning-Detection">
 <meta property="og:url" content="http://yoursite.com/2017/10/25/Paper-Review-Tracking-Learning-Detection/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
+<meta property="og:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Track">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-WY_9_SIvCRM/WfHjsdJ0VPI/AAAAAAAAAfw/3qsbbSixrpkpG6Td0S6WBSadvZhSRRTzwCHMYCw/I/fb-error.png">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-PXVB6IfgxDk/WfHsJMh5GOI/AAAAAAAAAgE/bBJ3ubnlpXMk6iLweX4FBZEhKqoWHWzLgCHMYCw/I/p-n-experts.png">
-<meta property="og:updated_time" content="2017-10-26T14:18:09.000Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png">
+<meta property="og:updated_time" content="2017-10-26T14:48:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paper Review: Tracking-Learning-Detection">
-<meta name="twitter:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn.  Trac">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png">
+<meta name="twitter:description" content="IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Track">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/-WY_9_SIvCRM/WfHjsdJ0VPI/AAAAAAAAAfw/3qsbbSixrpkpG6Td0S6WBSadvZhSRRTzwCHMYCw/I/fb-error.png">
 
 
 
@@ -485,7 +485,6 @@
       
         <h2><span id="introduction">Introduction</span></h2><p>Tracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal.</p>
 <p>TLD algorithm consists of three modules: Tracker, Detector and Learn.</p>
-<p><img src="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png" alt="TLD-workflow"></p>
 <p>Tracker is used to track object movement in continuous frames. It is only efficient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module.</p>
 <p>Detector is used to detect the error generated from tracker. It will automatically correct the error when it reaches a certain threshold.</p>
 <p>Learning iteratively trains classifier based on positive and negative samples generated from tracker and detector to improve detector’s accuracy.</p>
@@ -527,6 +526,7 @@
 <p><img src="https://lh3.googleusercontent.com/-PXVB6IfgxDk/WfHsJMh5GOI/AAAAAAAAAgE/bBJ3ubnlpXMk6iLweX4FBZEhKqoWHWzLgCHMYCw/I/p-n-experts.png" alt="p-n-experts"></p>
 <p>Take this figure as an example, the target vehicle is the dark one. In each frame, the black bounding box is positive sample detected by detector, the yellow one is positive sample generated from tracker, and the red star denotes final tracking result in each frame.<br>At frame t, the detector doesn’t find the dark vehicle, but P expert thinks that it is also a positive sample based on result from tracker. By the comparison between these two samples, N expert thinks the dark one is more reliable, so it marks the white vehicle as a negative sample. It is similar in frame t+1. In t+2 frame, P expert generates an incorrect result, but it gets excluded by N expert after comparison. Therefore, the target vehicle can still be tracked.</p>
 <h2><span id="conclusion">Conclusion</span></h2><p>The best part of this algorithm in my opinion is the structure. As we can tell, detector is the supervisor of tracker, because detector needs to correct tracker’s results; While tracker is the supervisor of training detector, because it needs to supervise using the detector’s classification results based on tracker’s results.<br>To conclude, a program, instead of a human being, is used to supervise another program’s training process. This is also why P-N learning is called semi-supervised learning.</p>
+<p><img src="https://lh3.googleusercontent.com/-hLwcBC_bcNo/WfHkI6IEYmI/AAAAAAAAAf0/O3R9lE8sH4w_u_7HdjUbGQRv3IIQDbkawCHMYCw/I/TLD-workflow.png" alt="TLD-workflow"></p>
 
       
     </div>
