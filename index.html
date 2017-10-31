@@ -646,8 +646,7 @@
 
       
         
-          
-            <h2><span id="map">Map</span></h2><p><code>map</code> applies a function to all the items in an input list in the following blueprint:</p>
+          <h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p><code>map</code> applies a function to all the items in an input list in the following blueprint:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">map(function_to_apply, list_of_inputs)</div></pre></td></tr></table></figure>
 <p>Usually this is what we do if we want to pass all the list elements to a function one-by-one and then collect the output:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">items = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">squared = []</div><div class="line"><span class="keyword">for</span> item <span class="keyword">in</span> items:</div><div class="line">    squared.append(item**<span class="number">2</span>)</div></pre></td></tr></table></figure>
@@ -655,17 +654,13 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">items = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">squared = list(map(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, items))</div></pre></td></tr></table></figure>
 <p>We can even have a list of functions instead of a list of inputs with <code>map</code>.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiply</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">return</span> (x*x)</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x)</span>:</span></div><div class="line">    <span class="keyword">return</span> (x+x)</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</div><div class="line">    value = list(map(<span class="keyword">lambda</span> x: x(i), funcs))</div><div class="line">    <span class="keyword">print</span> (value)</div><div class="line">    </div><div class="line"><span class="comment"># Output:</span></div><div class="line"><span class="comment"># [0, 0]</span></div><div class="line"><span class="comment"># [1, 2]</span></div><div class="line"><span class="comment"># [4, 4]</span></div><div class="line"><span class="comment"># [9, 6]</span></div></pre></td></tr></table></figure>
-<h2><span id="filter">Filter</span></h2><p><code>filter</code> creates a list of elements for which a function returns <code>True</code>. Example as follows:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">num_list = range(<span class="number">-3</span>,<span class="number">3</span>)</div><div class="line">greater_than_zero = list(filter(<span class="keyword">lambda</span> x: x &gt; <span class="number">0</span>, num_list))</div><div class="line">print(greater_than_zero)</div><div class="line"></div><div class="line"><span class="comment"># Output: [1, 2]</span></div></pre></td></tr></table></figure>
-<p>The filter resembles a for loop but it is a builtin function and faster.</p>
-<p><strong>Note:</strong><br>map &amp; filter can be replaced by list/dict/tuple comprehensions.</p>
-<h2><span id="reduce">Reduce</span></h2><p><code>reduce</code> is a function for performing some computation on a list and returning the result. It applies a rolling computation to sequential pairs of values in a list. For example, if we need to compute the sum of a list of integers.</p>
-<p>The normal way it might be done is using a for loop:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sum = <span class="number">0</span></div><div class="line">alist = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line"><span class="keyword">for</span> num <span class="keyword">in</span> alist:</div><div class="line">    sum += num</div><div class="line">    </div><div class="line"><span class="comment"># Output: 15</span></div></pre></td></tr></table></figure>
-<p>With using <code>reduce</code>:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</div><div class="line">alist = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">sum = reduce((<span class="keyword">lambda</span> x, y: x + y), alist)</div><div class="line"></div><div class="line"><span class="comment"># Output: 15</span></div></pre></td></tr></table></figure>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/30/Pythonic-Map-Filter-and-Reduce/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
