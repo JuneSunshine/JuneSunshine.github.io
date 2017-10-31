@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
 <meta property="og:description" content="Problem There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint al">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-27T02:40:28.000Z">
+<meta property="og:updated_time" content="2017-10-30T20:09:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="256. Paint House">
 <meta name="twitter:description" content="Problem There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint al">
@@ -486,7 +486,7 @@
 </blockquote>
 <a id="more"></a>
 <h2><span id="solution">Solution</span></h2><p>This is a typical dynamic programming problem.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">minCost</span><span class="params">(self, costs)</span>:</span></div><div class="line">    size = len(costs)</div><div class="line">    <span class="keyword">if</span> size == <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        </div><div class="line">    pre = costs[<span class="number">0</span>][:]</div><div class="line">    now = [<span class="number">0</span>]*<span class="number">3</span></div><div class="line">    </div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(size<span class="number">-1</span>):</div><div class="line">        now[<span class="number">0</span>] = min(pre[<span class="number">1</span>], pre[<span class="number">2</span>]) + costs[i+<span class="number">1</span>][<span class="number">0</span>]</div><div class="line">        now[<span class="number">1</span>] = min(pre[<span class="number">0</span>], pre[<span class="number">2</span>]) + costs[i+<span class="number">1</span>][<span class="number">1</span>]</div><div class="line">        now[<span class="number">2</span>] = min(pre[<span class="number">0</span>], pre[<span class="number">1</span>]) + costs[i+<span class="number">1</span>][<span class="number">2</span>]</div><div class="line">        pre[:] = now[:]</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> min(pre)</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">minCost</span><span class="params">(self, costs)</span>:</span></div><div class="line">    size = len(costs)</div><div class="line">    <span class="keyword">if</span> size == <span class="number">0</span>:</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span></div><div class="line">        </div><div class="line">    pre = costs[<span class="number">0</span>][:]</div><div class="line">    now = [<span class="number">0</span>]*<span class="number">3</span></div><div class="line">    </div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(size<span class="number">-1</span>):</div><div class="line">        now[<span class="number">0</span>] = min(pre[<span class="number">1</span>], pre[<span class="number">2</span>]) + costs[i+<span class="number">1</span>][<span class="number">0</span>]</div><div class="line">        now[<span class="number">1</span>] = min(pre[<span class="number">0</span>], pre[<span class="number">2</span>]) + costs[i+<span class="number">1</span>][<span class="number">1</span>]</div><div class="line">        now[<span class="number">2</span>] = min(pre[<span class="number">0</span>], pre[<span class="number">1</span>]) + costs[i+<span class="number">1</span>][<span class="number">2</span>]</div><div class="line">        pre[:] = now[:]</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> min(pre)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -651,7 +651,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -673,7 +673,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
