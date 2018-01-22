@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Announcement: CV Website Updated]]></title>
+    <url>%2F2018%2F01%2F14%2FAnnouncement-CV-Website-Updated%2F</url>
+    <content type="text"><![CDATA[CV Website Updated/UpgradedAs it is mentioned in last announcement,lijingyang.me is originally built for CSCI 731 class project showcase, but planned for a long-term CV website. After the end of last semester, I started working on this update. It not only trains my web development skills, but also offers a better place for introducing me and my skills to others. This website uses Bootstrap, Jquery and Ajax. Some functionalities are still in development which might not be working well in current status. However, I think it is good enough to be deployed, and this is why I make this announcement and share it with you. I will keep updating my portfolio and random blogs, but tech related blogs will still be updated on this website. Thanks for reading! Hope we can share a common study experience here! A hungry developer,Jingyang Li]]></content>
+      <categories>
+        <category>Message</category>
+      </categories>
+      <tags>
+        <tag>Announcements</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Why I Switch to React Native]]></title>
+    <url>%2F2017%2F12%2F28%2FWhy-I-Switch-to-React-Native%2F</url>
+    <content type="text"><![CDATA[About half a year ago, I happened to know a]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Message</category>
+      </categories>
+      <tags>
+        <tag>React Native</tag>
+        <tag>App Development</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Pythonic: Map, Filter and Reduce]]></title>
     <url>%2F2017%2F10%2F30%2FPythonic-Map-Filter-and-Reduce%2F</url>
     <content type="text"><![CDATA[Mapmap applies a function to all the items in an input list in the following blueprint: 1map(function_to_apply, list_of_inputs) Usually this is what we do if we want to pass all the list elements to a function one-by-one and then collect the output: 1234items = [1, 2, 3, 4, 5]squared = []for item in items: squared.append(item**2) map allows us to implement this in a much simpler and nicer way: 12items = [1, 2, 3, 4, 5]squared = list(map(lambda x: x**2, items)) We can even have a list of functions instead of a list of inputs with map. 1234567891011121314def multiply(x): return (x*x)def add(x): return (x+x)funcs = [multiply, add] for i in range(4): value = list(map(lambda x: x(i), funcs)) print (value) # Output:# [0, 0]# [1, 2]# [4, 4]# [9, 6] Filterfilter creates a list of elements for which a function returns True. Example as follows: 12345num_list = range(-3,3)greater_than_zero = list(filter(lambda x: x &gt; 0, num_list))print(greater_than_zero)# Output: [1, 2] The filter resembles a for loop but it is a builtin function and faster. Note:map &amp; filter can be replaced by list/dict/tuple comprehensions. Reducereduce is a function for performing some computation on a list and returning the result. It applies a rolling computation to sequential pairs of values in a list. For example, if we need to compute the sum of a list of integers. The normal way it might be done is using a for loop: 123456sum = 0alist = [1, 2, 3, 4, 5]for num in alist: sum += num # Output: 15 With using reduce: 12345from functools import reducealist = [1, 2, 3, 4, 5]sum = reduce((lambda x, y: x + y), alist)# Output: 15]]></content>
