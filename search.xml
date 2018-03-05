@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Machine Learning Algorithm: Linear Regression]]></title>
+    <url>%2F2018%2F03%2F05%2FMachine-Learning-Algorithm-Linear-Regression%2F</url>
+    <content type="text"><![CDATA[What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known as regression line and represented by a linear equation y = ax + b. The best way to understand linear regression is to relive this experience of childhood. For example, we ask a child to arrange people in his class by increasing order of weight, without asking them their weights. What do you think the child will do? He / she would likely look at the height and build of people and arrange them using a combination of these visible parameters. This is linear regression in real life. The child has actually figured out that height and build would be positively correlated to the weight by a relationship, which looks like the equation above. In this equation: y - Dependent Varaible a - Slope x - Independent Variable b - Intercept These coefficients a and b are derived based on minimizing the sum of squared difference of distance between data points and regression line.]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Machine Learning Algorithms Overview]]></title>
     <url>%2F2018%2F03%2F04%2FMachine-Learning-Algorithms-Overview%2F</url>
     <content type="text"><![CDATA[Broad Types of Machine Learning Algorithms1. Supervised LearningExplanation:The most important feature of this learning is that it consists of a target / outcome variable which is to be predicted from a give set of predictors. A function that map inputs to desired outputs can be generated using these variables. The training process continues until the model achieves a desired level of accuracy on the training data. Examples: Regression Decision Tree Random Forest KNN Logistic Regression 2. Unsupervised LearningExplanation:We do not have any target or outcome variable to predict / estimate in this learning. It is usually used for clustering. Examples: Apriori Algorithm K-means 3. Reinforcement LearningExplanation:In this learning, the machine is trained to make specific decisions. It often works like this: the machine is exposed to an environment where it trains itself continually using trial and error. This machines learns from past experience and tries to capture the best possible knowledge to make accurate business decisions. Examples: Markov Decision Process List of Common Machine Learning Algorithms Linear Regression Logistic Regression Decision Tree SVM Naive Bayes K-NN K-Means Random Forest Dimensionality Reduction Algorithms Gradient Boosting Algorithms GBM XGBoost LightGBM CatBoost I will study and explain each one of them in following blogs.]]></content>
