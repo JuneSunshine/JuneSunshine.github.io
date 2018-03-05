@@ -102,7 +102,7 @@
 <link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Leetcode,Dynamic Programming," />
+  <meta name="keywords" content="Machine Learning,Algorithm," />
 
 
 
@@ -118,18 +118,18 @@
 
 
 
-<meta name="description" content="Problem You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a po">
-<meta name="keywords" content="Leetcode,Dynamic Programming">
+<meta name="description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
+<meta name="keywords" content="Machine Learning,Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="70. Climbing Stairs">
-<meta property="og:url" content="http://yoursite.com/2017/09/05/70-Climbing-Stairs/index.html">
+<meta property="og:title" content="Machine Learning Algorithm: Linear Regression">
+<meta property="og:url" content="http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="Problem You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a po">
+<meta property="og:description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-12T14:39:06.000Z">
+<meta property="og:updated_time" content="2018-03-05T20:12:35.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="70. Climbing Stairs">
-<meta name="twitter:description" content="Problem You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a po">
+<meta name="twitter:title" content="Machine Learning Algorithm: Linear Regression">
+<meta name="twitter:description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
 
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/05/70-Climbing-Stairs/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/"/>
 
 
 
 
 
-  <title>70. Climbing Stairs | JuneSunshine's Blog</title>
+  <title>Machine Learning Algorithm: Linear Regression | JuneSunshine's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -375,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/70-Climbing-Stairs/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuneSunshine">
@@ -392,7 +392,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">70. Climbing Stairs</h1>
+          <h1 class="post-title" itemprop="name headline">Machine Learning Algorithm: Linear Regression</h1>
         
 
         <div class="post-meta">
@@ -404,8 +404,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-05T23:24:20-04:00">
-                2017-09-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-15T00:23:38-05:00">
+                2018-02-15
               </time>
             
 
@@ -445,8 +445,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/05/70-Climbing-Stairs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/09/05/70-Climbing-Stairs/" itemprop="commentCount">0</span> comments
+                <a href="/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -479,13 +479,20 @@
       
 
       
-        <h2><span id="problem">Problem</span></h2><blockquote>
-<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
-<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
-<p>Note: Given n will be a positive integer.</p>
-</blockquote>
+        <h2><span id="what-is-linear-regression">What is Linear Regression</span></h2><p>Linear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known as regression line and represented by a linear equation y = ax + b.</p>
 <a id="more"></a>
-<h2><span id="solution">Solution</span></h2>
+<p>The best way to understand linear regression is to relive this experience of childhood. For example, we ask a child to arrange people in his class by increasing order of weight, without asking them their weights. What do you think the child will do? He / she would likely look at the height and build of people and arrange them using a combination of these visible parameters. This is linear regression in real life. The child has actually figured out that height and build would be positively correlated to the weight by a relationship, which looks like the equation above.</p>
+<p>In this equation:</p>
+<ul>
+<li>y - Dependent Varaible</li>
+<li>a - Slope</li>
+<li>x - Independent Variable</li>
+<li>b - Intercept</li>
+</ul>
+<p>These coefficients a and b are derived based on minimizing the sum of squared difference of distance between data points and regression line.</p>
+<p>Linear Regression is of mainly two types: Simple Linear Regression and Multiple Linear Regression. Simple Linear Regression is characterized by one independent variable. While Multiple Linear Regression is characterized by multiple independent variables. While finding best fit line, you can fit a polynomial or curvilinear regression. And these are known as polynomial or curvilinear regression.</p>
+<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</div><div class="line"><span class="comment"># Load Train and Test datasets</span></div><div class="line"><span class="comment"># Identify feature and response variable(s) and values must be numeric and numpy arrays</span></div><div class="line">x_train=input_variables_values_training_datasets</div><div class="line">y_train=target_variables_values_training_datasets</div><div class="line">x_test=input_variables_values_test_datasets</div><div class="line"><span class="comment"># Create linear regression object</span></div><div class="line">linear = linear_model.LinearRegression()</div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">linear.fit(x_train, y_train)</div><div class="line">linear.score(x_train, y_train)</div><div class="line"><span class="comment"># Equation coefficient and Intercept</span></div><div class="line">print(<span class="string">'Coefficient: \n'</span>, linear.coef_)</div><div class="line">print(<span class="string">'Intercept: \n'</span>, linear.intercept_)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= linear.predict(x_test)</div></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -534,9 +541,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
-            <a href="/tags/Dynamic-Programming/" rel="tag"># Dynamic Programming</a>
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       
@@ -549,8 +556,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/28/To-My-Love-Chen/" rel="next" title="To My Love Chen">
-                <i class="fa fa-chevron-left"></i> To My Love Chen
+              <a href="/2018/02/04/Machine-Learning-Algorithms-Overview/" rel="next" title="Machine Learning Algorithms Overview">
+                <i class="fa fa-chevron-left"></i> Machine Learning Algorithms Overview
               </a>
             
           </div>
@@ -559,8 +566,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/19/206-Reverse-Linked-List/" rel="prev" title="206. Reverse Linked List">
-                206. Reverse Linked List <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/" rel="prev" title="Machine Learning Algorithm: Logistic Regression">
+                Machine Learning Algorithm: Logistic Regression <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -598,7 +605,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://yoursite.com/2017/09/05/70-Climbing-Stairs/"
+           data-href="http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -754,7 +761,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Linear Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>
@@ -930,9 +937,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/09/05/70-Climbing-Stairs/';
-          this.page.identifier = '2017/09/05/70-Climbing-Stairs/';
-          this.page.title = '70. Climbing Stairs';
+          this.page.url = 'http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/';
+          this.page.identifier = '2018/02/15/Machine-Learning-Algorithm-Linear-Regression/';
+          this.page.title = 'Machine Learning Algorithm: Linear Regression';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Vincent.disqus.com/embed.js';

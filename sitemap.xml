@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/</loc>
+    <loc>http://yoursite.com/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/</loc>
     
-    <lastmod>2018-03-05T16:19:58.247Z</lastmod>
+    <lastmod>2018-03-05T20:12:54.553Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/</loc>
+    
+    <lastmod>2018-03-05T20:12:35.301Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/04/Machine-Learning-Algorithms-Overview/</loc>
+    
+    <lastmod>2018-03-05T20:12:10.751Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Decision-Tree/</loc>
+    
+    <lastmod>2018-03-05T16:27:04.955Z</lastmod>
     
   </url>
   
@@ -12,20 +33,6 @@
     <loc>http://yoursite.com/2017/08/28/To-My-Love-Chen/</loc>
     
     <lastmod>2018-03-05T16:17:20.123Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Linear-Regression/</loc>
-    
-    <lastmod>2018-03-05T15:26:58.804Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/04/Machine-Learning-Algorithms-Overview/</loc>
-    
-    <lastmod>2018-03-05T05:22:08.621Z</lastmod>
     
   </url>
   
