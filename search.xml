@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Machine Learning Algorithms Overview]]></title>
+    <url>%2F2018%2F03%2F04%2FMachine-Learning-Algorithms-Overview%2F</url>
+    <content type="text"><![CDATA[Broad Types of Machine Learning Algorithms1. Supervised LearningExplanation:The most important feature of this learning is that it consists of a target / outcome variable which is to be predicted from a give set of predictors. A function that map inputs to desired outputs can be generated using these variables. The training process continues until the model achieves a desired level of accuracy on the training data. Examples: Regression Decision Tree Random Forest KNN Logistic Regression 2. Unsupervised LearningExplanation:We do not have any target or outcome variable to predict / estimate in this learning. It is usually used for clustering. Examples: Apriori Algorithm K-means 3. Reinforcement LearningExplanation:In this learning, the machine is trained to make specific decisions. It often works like this: the machine is exposed to an environment where it trains itself continually using trial and error. This machines learns from past experience and tries to capture the best possible knowledge to make accurate business decisions. Examples: Markov Decision Process List of Common Machine Learning Algorithms Linear Regression Logistic Regression Decision Tree SVM Naive Bayes K-NN K-Means Random Forest Dimensionality Reduction Algorithms Gradient Boosting Algorithms GBM XGBoost LightGBM CatBoost I will study and explain each one of them in following blogs.]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Why I Prefer VueJS]]></title>
+    <url>%2F2018%2F01%2F27%2FWhy-I-Prefer-VueJS%2F</url>
+    <content type="text"><![CDATA[All contents below are concluded from my own experience. If anything related to Vue.js is not accurate, please leave a comment. Thanks! What is Vue.js? Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries. In a sentence, Vue.js can provide effective data binding and flexible components by using simple API. Why use Vue.js?Compared to Angularjs and Reactjs, Vue is famous for its easiness and lightweight. The features are: Lightweight Doubly data binding Everything is component]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Announcement: CV Website Updated]]></title>
     <url>%2F2018%2F01%2F14%2FAnnouncement-CV-Website-Updated%2F</url>
     <content type="text"><![CDATA[CV Website Updated/UpgradedAs it is mentioned in last announcement,lijingyang.me is originally built for CSCI 731 class project showcase, but planned for a long-term CV website. After the end of last semester, I started working on this update. It not only trains my web development skills, but also offers a better place for introducing me and my skills to others. This website uses Bootstrap, Jquery and Ajax. Some functionalities are still in development which might not be working well in current status. However, I think it is good enough to be deployed, and this is why I make this announcement and share it with you. I will keep updating my portfolio and random blogs, but tech related blogs will still be updated on this website. Thanks for reading! Hope we can share a common study experience here! A hungry developer,Jingyang Li]]></content>
