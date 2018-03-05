@@ -102,7 +102,7 @@
 <link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Leetcode," />
+  <meta name="keywords" content="Machine Learning,Algorithm," />
 
 
 
@@ -118,18 +118,20 @@
 
 
 
-<meta name="description" content="Problem Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use th">
-<meta name="keywords" content="Leetcode">
+<meta name="description" content="What is Logistic RegressionMost importantly, this is a classification algorithm instead of a regression algorithm. It is used to estimate discrete values (Binary values, yes/no, true/false) based on g">
+<meta name="keywords" content="Machine Learning,Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2017/08/16/Two-Sum/index.html">
+<meta property="og:title" content="Machine Learning Algorithm: Logistic Regression">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="Problem Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use th">
+<meta property="og:description" content="What is Logistic RegressionMost importantly, this is a classification algorithm instead of a regression algorithm. It is used to estimate discrete values (Binary values, yes/no, true/false) based on g">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-21T02:57:23.000Z">
+<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Logistic_Regression.png">
+<meta property="og:updated_time" content="2018-03-05T16:10:30.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="1. Two Sum">
-<meta name="twitter:description" content="Problem Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use th">
+<meta name="twitter:title" content="Machine Learning Algorithm: Logistic Regression">
+<meta name="twitter:description" content="What is Logistic RegressionMost importantly, this is a classification algorithm instead of a regression algorithm. It is used to estimate discrete values (Binary values, yes/no, true/false) based on g">
+<meta name="twitter:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Logistic_Regression.png">
 
 
 
@@ -160,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/16/Two-Sum/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/"/>
 
 
 
 
 
-  <title>1. Two Sum | JuneSunshine's Blog</title>
+  <title>Machine Learning Algorithm: Logistic Regression | JuneSunshine's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -375,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuneSunshine">
@@ -392,7 +394,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">1. Two Sum</h1>
+          <h1 class="post-title" itemprop="name headline">Machine Learning Algorithm: Logistic Regression</h1>
         
 
         <div class="post-meta">
@@ -404,8 +406,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-16T10:33:18-04:00">
-                2017-08-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-05T10:27:26-05:00">
+                2018-03-05
               </time>
             
 
@@ -445,8 +447,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/16/Two-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/08/16/Two-Sum/" itemprop="commentCount">0</span> comments
+                <a href="/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -479,16 +481,14 @@
       
 
       
-        <h2><span id="problem">Problem</span></h2><blockquote>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.</p>
-<p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
-<p>Example:<br>Given nums = [2, 7, 11, 15], target = 9,</p>
-<p>Because nums[0] + nums[1] = 2 + 7 = 9,<br>return [0, 1].</p>
-</blockquote>
-<a id="more"></a>
-<h2><span id="solution">Solution</span></h2><p>This appears to be the first and easiest problem on Leetcode. Most people will use the brute force way to solve this problem. However, it is not time efficient.</p>
-<p>The best way to solve this is using dictionary which means the time efficiency of checking is O(1). Each time a new number is found, it will be added in the dictionary as value while the key is the difference between this number and target.</p>
-<p>Python code link:<br><a href="https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/twoSum.py" target="_blank" rel="external">https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/twoSum.py</a></p>
+        <h2><span id="what-is-logistic-regression">What is Logistic Regression</span></h2><p>Most importantly, this is a classification algorithm instead of a regression algorithm. It is used to estimate discrete values (Binary values, yes/no, true/false) based on given set of independent variables. In simple words, it predicts the probability of occurrence of an event by fitting data to a logit function. Hence, it is also known as logit regression. Since, it predicts the probability, its output values between 0 and 1.</p>
+<p>Again, let us try and understand this through a simple example.</p>
+<p>Let’s say your friend gives you a puzzle to solve. There are only 2 outcome scenarios – either you solve it or you don’t. Now imagine, that you are being given wide range of puzzles / quizzes in an attempt to understand which subjects you are good at. The outcome to this study would be something like this – if you are given a trignometry based tenth grade problem, you are 70% likely to solve it. On the other hand, if it is grade fifth history question, the probability of getting an answer is only 30%. This is what Logistic Regression provides you.</p>
+<p>Coming to the math, the log odds of the outcome is modeled as a linear combination of the predictor variables.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">odds= p/ (<span class="number">1</span>-p) = probability of event occurrence / probability of <span class="keyword">not</span> event occurrence</div><div class="line">ln(odds) = ln(p/(<span class="number">1</span>-p))</div><div class="line">logit(p) = ln(p/(<span class="number">1</span>-p)) = b0+b1X1+b2X2+b3X3....+bkXk</div></pre></td></tr></table></figure>
+<p>Above, p is the probability of presence of the characteristic of interest. It chooses parameters that maximize the likelihood of observing the sample values rather than that minimize the sum of squared errors (like in ordinary regression).</p>
+<p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/Logistic_Regression.png" alt=""></p>
+<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create logistic regression object</span></div><div class="line">model = LogisticRegression()</div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Equation coefficient and Intercept</span></div><div class="line">print(<span class="string">'Coefficient: \n'</span>, model.coef_)</div><div class="line">print(<span class="string">'Intercept: \n'</span>, model.intercept_)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -538,7 +538,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       
@@ -551,8 +553,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/15/Remove-Nth-From-End/" rel="next" title="19. Remove Nth From End">
-                <i class="fa fa-chevron-left"></i> 19. Remove Nth From End
+              <a href="/2018/03/05/Machine-Learning-Algorithm-Linear-Regression/" rel="next" title="Machine Learning Algorithm: Linear Regression">
+                <i class="fa fa-chevron-left"></i> Machine Learning Algorithm: Linear Regression
               </a>
             
           </div>
@@ -560,10 +562,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/16/Permutations/" rel="prev" title="31 & 46 & 47 & 60. Permutations">
-                31 & 46 & 47 & 60. Permutations <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -600,7 +598,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://yoursite.com/2017/08/16/Two-Sum/"
+           data-href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -756,7 +754,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Logistic Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>
@@ -932,9 +930,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/08/16/Two-Sum/';
-          this.page.identifier = '2017/08/16/Two-Sum/';
-          this.page.title = '1. Two Sum';
+          this.page.url = 'http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/';
+          this.page.identifier = '2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/';
+          this.page.title = 'Machine Learning Algorithm: Logistic Regression';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Vincent.disqus.com/embed.js';

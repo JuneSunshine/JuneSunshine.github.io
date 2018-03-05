@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
 <meta property="og:description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-05T06:29:10.942Z">
+<meta property="og:updated_time" content="2018-03-05T15:26:58.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Algorithm: Linear Regression">
 <meta name="twitter:description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
@@ -491,7 +491,7 @@
 </ul>
 <p>These coefficients a and b are derived based on minimizing the sum of squared difference of distance between data points and regression line.</p>
 <p>Linear Regression is of mainly two types: Simple Linear Regression and Multiple Linear Regression. Simple Linear Regression is characterized by one independent variable. While Multiple Linear Regression is characterized by multiple independent variables. While finding best fit line, you can fit a polynomial or curvilinear regression. And these are known as polynomial or curvilinear regression.</p>
-<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Import Library</span></div><div class="line"><span class="comment">#Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</div><div class="line"><span class="comment">#Load Train and Test datasets</span></div><div class="line"><span class="comment">#Identify feature and response variable(s) and values must be numeric and numpy arrays</span></div><div class="line">x_train=input_variables_values_training_datasets</div><div class="line">y_train=target_variables_values_training_datasets</div><div class="line">x_test=input_variables_values_test_datasets</div><div class="line"><span class="comment"># Create linear regression object</span></div><div class="line">linear = linear_model.LinearRegression()</div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">linear.fit(x_train, y_train)</div><div class="line">linear.score(x_train, y_train)</div><div class="line"><span class="comment">#Equation coefficient and Intercept</span></div><div class="line">print(<span class="string">'Coefficient: \n'</span>, linear.coef_)</div><div class="line">print(<span class="string">'Intercept: \n'</span>, linear.intercept_)</div><div class="line"><span class="comment">#Predict Output</span></div><div class="line">predicted= linear.predict(x_test)</div></pre></td></tr></table></figure>
+<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</div><div class="line"><span class="comment"># Load Train and Test datasets</span></div><div class="line"><span class="comment"># Identify feature and response variable(s) and values must be numeric and numpy arrays</span></div><div class="line">x_train=input_variables_values_training_datasets</div><div class="line">y_train=target_variables_values_training_datasets</div><div class="line">x_test=input_variables_values_test_datasets</div><div class="line"><span class="comment"># Create linear regression object</span></div><div class="line">linear = linear_model.LinearRegression()</div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">linear.fit(x_train, y_train)</div><div class="line">linear.score(x_train, y_train)</div><div class="line"><span class="comment"># Equation coefficient and Intercept</span></div><div class="line">print(<span class="string">'Coefficient: \n'</span>, linear.coef_)</div><div class="line">print(<span class="string">'Intercept: \n'</span>, linear.intercept_)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= linear.predict(x_test)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -565,6 +565,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/05/Machine-Learning-Algorithm-Logistic-Regression/" rel="prev" title="Machine Learning Algorithm: Logistic Regression">
+                Machine Learning Algorithm: Logistic Regression <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -654,7 +658,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">28</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
