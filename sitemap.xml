@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/</loc>
+    
+    <lastmod>2018-03-07T05:11:18.333Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/</loc>
     
     <lastmod>2018-03-05T20:12:54.553Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/2018/02/04/Machine-Learning-Algorithms-Overview/</loc>
     
     <lastmod>2018-03-05T20:12:10.751Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-Decision-Tree/</loc>
-    
-    <lastmod>2018-03-05T16:27:04.955Z</lastmod>
     
   </url>
   
