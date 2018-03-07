@@ -477,16 +477,16 @@
 
       
         
-          
-            <h2><span id="what-is-decision-tree">What is Decision Tree</span></h2><p>Decision Tree is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent variables. In this algorithm, we split the population into two or more homogeneous sets. This is done based on most significant attributes / independent variables to make as distinct groups as possible. More details about Decision Tree can be found <a href="https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/" target="_blank" rel="external">here</a>. </p>
+          <h2 id="What-is-Decision-Tree"><a href="#What-is-Decision-Tree" class="headerlink" title="What is Decision Tree"></a>What is Decision Tree</h2><p>Decision Tree is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent variables. In this algorithm, we split the population into two or more homogeneous sets. This is done based on most significant attributes / independent variables to make as distinct groups as possible. More details about Decision Tree can be found <a href="https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/" target="_blank" rel="external">here</a>. </p>
 <p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/IkBzK.png" alt="Decision Tree"></p>
-<p>In the image above, you can see that population is classified into four different groups based on multiple attributes to identify ‘if they will play or not’. To split the population into different heterogeneous groups, it uses various techniques like Gini, Information Gain, Chi-square, entropy.</p>
-<p>The best way to understand how decision tree works, is to play Jezzball – a classic game from Microsoft (image below). Essentially, you have a room with moving walls and you need to create walls such that maximum area gets cleared off with out the balls.</p>
-<p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/download.jpg" alt="Jezzball"></p>
-<p>So, every time you split the room with a wall, you are trying to create 2 different populations with in the same room. Decision trees work in very similar fashion by dividing a population in as different groups as possible.</p>
-<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create tree object </span></div><div class="line">model = tree.DecisionTreeClassifier(criterion=<span class="string">'gini'</span>) <span class="comment"># for classification, here you can change the algorithm as gini or entropy (information gain) by default it is gini  </span></div><div class="line"><span class="comment"># model = tree.DecisionTreeRegressor() for regression</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
-
-          
+<p>In the image above, you can see that population is classified into four different groups based on multiple attributes to identify ‘if they will play or not’. To split the population into different heterogeneous groups, it uses various techniques like Gini, Information Gain, Chi-square, entropy.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -959,7 +959,7 @@
 
       
         
-          <h2 id="Broad-Types-of-Machine-Learning-Algorithms"><a href="#Broad-Types-of-Machine-Learning-Algorithms" class="headerlink" title="Broad Types of Machine Learning Algorithms"></a>Broad Types of Machine Learning Algorithms</h2><h4 id="1-Supervised-Learning"><a href="#1-Supervised-Learning" class="headerlink" title="1. Supervised Learning"></a>1. Supervised Learning</h4><h6 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation:"></a>Explanation:</h6><p>The most important feature of this learning is that it consists of a target / outcome variable which is to be predicted from a give set of predictors. A function that map inputs to desired outputs can be generated using these variables. The training process continues until the model achieves a desired level of accuracy on the training data.</p>
+          <h2 id="Broad-Types-of-Machine-Learning-Algorithms"><a href="#Broad-Types-of-Machine-Learning-Algorithms" class="headerlink" title="Broad Types of Machine Learning Algorithms"></a>Broad Types of Machine Learning Algorithms</h2><h4 id="1-Supervised-Learning-Classification-amp-Regression"><a href="#1-Supervised-Learning-Classification-amp-Regression" class="headerlink" title="1. Supervised Learning (Classification &amp; Regression)"></a>1. Supervised Learning (Classification &amp; Regression)</h4><h6 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation:"></a>Explanation:</h6><p>The most important feature of this learning is that it consists of a target / outcome variable which is to be predicted from a give set of predictors. A function that map inputs to desired outputs can be generated using these variables. The training process continues until the model achieves a desired level of accuracy on the training data.</p>
 <h6 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h6><ul>
 <li>Regression</li>
 <li>Decision Tree</li>
