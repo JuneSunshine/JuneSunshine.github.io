@@ -126,13 +126,13 @@
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
 <meta property="og:description" content="What is Decision TreeDecision Tree is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent vari">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/IkBzK.png">
-<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/download.jpg">
-<meta property="og:updated_time" content="2018-03-07T05:44:33.946Z">
+<meta property="og:image" content="https://www.thecrazyprogrammer.com/wp-content/uploads/2017/12/Machine-Learning-Algorithms-6.png">
+<meta property="og:image" content="https://lh5.ggpht.com/3SVImcfNtbt8tsmde6aTV2JAAmS2bHtuRBPxJQoxNwS8ZCmcj6wo6juMMT7p9yVPJgP1=h900">
+<meta property="og:updated_time" content="2018-03-08T23:08:22.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Algorithm: Decision Tree">
 <meta name="twitter:description" content="What is Decision TreeDecision Tree is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent vari">
-<meta name="twitter:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/IkBzK.png">
+<meta name="twitter:image" content="https://www.thecrazyprogrammer.com/wp-content/uploads/2017/12/Machine-Learning-Algorithms-6.png">
 
 
 
@@ -483,9 +483,9 @@
 
       
         <h2><span id="what-is-decision-tree">What is Decision Tree</span></h2><p>Decision Tree is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent variables. In this algorithm, we split the population into two or more homogeneous sets. This is done based on most significant attributes / independent variables to make as distinct groups as possible. More details about Decision Tree can be found <a href="https://www.analyticsvidhya.com/blog/2016/04/complete-tutorial-tree-based-modeling-scratch-in-python/" target="_blank" rel="external">here</a>. </p>
-<p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/IkBzK.png" alt="Decision Tree"></p>
+<p><img src="https://www.thecrazyprogrammer.com/wp-content/uploads/2017/12/Machine-Learning-Algorithms-6.png" alt="Decision Tree"></p>
 <p>In the image above, you can see that population is classified into four different groups based on multiple attributes to identify ‘if they will play or not’. To split the population into different heterogeneous groups, it uses various techniques like Gini, Information Gain, Chi-square, entropy.<br><a id="more"></a><br>The best way to understand how decision tree works, is to play Jezzball – a classic game from Microsoft (image below). Essentially, you have a room with moving walls and you need to create walls such that maximum area gets cleared off with out the balls.</p>
-<p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/download.jpg" alt="Jezzball"></p>
+<p><img src="https://lh5.ggpht.com/3SVImcfNtbt8tsmde6aTV2JAAmS2bHtuRBPxJQoxNwS8ZCmcj6wo6juMMT7p9yVPJgP1=h900" alt="Jezzball"></p>
 <p>So, every time you split the room with a wall, you are trying to create 2 different populations with in the same room. Decision trees work in very similar fashion by dividing a population in as different groups as possible.</p>
 <h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create tree object </span></div><div class="line">model = tree.DecisionTreeClassifier(criterion=<span class="string">'gini'</span>) <span class="comment"># for classification, here you can change the algorithm as gini or entropy (information gain) by default it is gini  </span></div><div class="line"><span class="comment"># model = tree.DecisionTreeRegressor() for regression</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
 
