@@ -6,7 +6,6 @@
     <content type="text"><![CDATA[Points to remember Make data based decisions The big pattern (try them all) Unit testing (start with small program &amp; grow it) Learn from mistakes Practice finding debugger Data LagTime between when you get data and time you can use it CRISP-DMShort for Cross-Industry Standard Process for Data MiningProcess: Business understanding Data understanding Data preparation &amp; data cleaning Modeling Evaluation Deployment]]></content>
       <categories>
         <category>Notes</category>
-        <category>Tech</category>
       </categories>
       <tags>
         <tag>Big Data</tag>
