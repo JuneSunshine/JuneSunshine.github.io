@@ -110,11 +110,11 @@
     <url>%2F2017%2F10%2F25%2FPaper-Review-Image-based-Localization%2F</url>
     <content type="text"><![CDATA[IntroductionIn this paper, authors’ contribution is three-fold: Propose a new CNN+LSTM architecture for camera regression Provide the ﬁrst extensive quantitive comparison of CNN-based and SIFT-based localization methods Introduce a new challenging large indoor sequence MethodThis method uses structure-based localization technique to represent a scene. The most important and distinct part of this method is combining machine learning and deep learning method with localization technique. Exactly speaking, there are two machine learning techniques used: CNN: feature extraction LSTM: structured feature correlation The workﬂow is using the pre-trained GoogleNet as input and followed by a fully connected layer which outputs a 2048 dimensional vector which can be seen as the image to be localized. Then an average pooling layer gathers the information of each feature channel for the entire image. The next layer is to learn the correlation among features. However, the high dimensionality of fully connected layers makes the network prone overfitting to training data. The solution to this is LSTM (Long Short-Term Memory), which has the function of reducing the dimensionality of the feature vector in a structured way. The memory units can filter out the most useful feature correlations for the task of pose estimation. ConclusionThis paper is a typical example of computer vision development trend in recent years, which is the combination of deep learning and computer vision to make significant efforts to large-scale image processing.]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Paper Review</category>
       </categories>
       <tags>
-        <tag>Paper Review</tag>
         <tag>Computer Vision</tag>
+        <tag>Image-based Localization</tag>
       </tags>
   </entry>
   <entry>
@@ -122,11 +122,11 @@
     <url>%2F2017%2F10%2F25%2FPaper-Review-Tracking-Learning-Detection%2F</url>
     <content type="text"><![CDATA[IntroductionTracking-Learning-Detection (TLD) is a long-term tracking algorithm focusing on a single object by Zdenek Kalal. TLD algorithm consists of three modules: Tracker, Detector and Learn. Tracker is used to track object movement in continuous frames. It is only efficient when the object is always visible. Tracker estimates the object’s position in current frame based on its known position in last frame to create a movement track which can provide positive samples for learning module. Detector is used to detect the error generated from tracker. It will automatically correct the error when it reaches a certain threshold. Learning iteratively trains classifier based on positive and negative samples generated from tracker and detector to improve detector’s accuracy. Methods Tracker: Median-Flow Algorithm Detector: Cascaded Classiﬁer Learning: P-N Learning TRACKER: Median-Flow algorithm: The author assumes that a good tracking algorithm should have “forward-backward consistency”, which means no matter it tracks in forward of time or backward, the trajectory should be the same. Therefore, he invents an error metric called “F-B Error”: The Euclidean distance between current position at k frame and the forward-backward prediction position at k frame from k+p frame. This tracking algorithm uses Lucas-Kanade tracker. DETECTOR: Cascaded Classiﬁer includes: Path Variance Classifier Compute variance of each patch and label the half with lower values as negative samples Ensemble Classifier (Random Ferns Classifier) Similar to random forest, but each layer of the tree has the same threshold for each half of subtrees. Nearest Neighbor Classifier Compute the similarity of the new sample, label it as positive if the value is beyond 0.6 LEARNING: P-Expert: detect false negative samplesN-Expert: detect false positive samples“Structure” is a concept brought up by author, it has two meanings: The target can only appear at one place at each frame The movement of target should be continuous in adjacent frames Take this figure as an example, the target vehicle is the dark one. In each frame, the black bounding box is positive sample detected by detector, the yellow one is positive sample generated from tracker, and the red star denotes final tracking result in each frame.At frame t, the detector doesn’t find the dark vehicle, but P expert thinks that it is also a positive sample based on result from tracker. By the comparison between these two samples, N expert thinks the dark one is more reliable, so it marks the white vehicle as a negative sample. It is similar in frame t+1. In t+2 frame, P expert generates an incorrect result, but it gets excluded by N expert after comparison. Therefore, the target vehicle can still be tracked. ConclusionThe best part of this algorithm in my opinion is the structure. As we can tell, detector is the supervisor of tracker, because detector needs to correct tracker’s results; While tracker is the supervisor of training detector, because it needs to supervise using the detector’s classification results based on tracker’s results.To conclude, a program, instead of a human being, is used to supervise another program’s training process. This is also why P-N learning is called semi-supervised learning.]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Paper Review</category>
       </categories>
       <tags>
-        <tag>Paper Review</tag>
         <tag>Computer Vision</tag>
+        <tag>TLD</tag>
       </tags>
   </entry>
   <entry>
@@ -212,7 +212,7 @@
     <url>%2F2017%2F09%2F26%2F256-Paint-House%2F</url>
     <content type="text"><![CDATA[Problem There are a row of n houses, each house can be painted with one of the three colors: red, blue or green. The cost of painting each house with a certain color is different. You have to paint all the houses such that no two adjacent houses have the same color. The cost of painting each house with a certain color is represented by a n x 3 cost matrix. For example, costs[0][0] is the cost of painting house 0 with color red; costs[1][2] is the cost of painting house 1 with color green, and so on… Find the minimum cost to paint all houses. Note:All costs are positive integers. SolutionThis is a typical dynamic programming problem. 123456789101112131415def minCost(self, costs): size = len(costs) if size == 0: return 0 pre = costs[0][:] now = [0]*3 for i in range(size-1): now[0] = min(pre[1], pre[2]) + costs[i+1][0] now[1] = min(pre[0], pre[2]) + costs[i+1][1] now[2] = min(pre[0], pre[1]) + costs[i+1][2] pre[:] = now[:] return min(pre)]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -223,7 +223,7 @@
     <url>%2F2017%2F09%2F19%2F206-Reverse-Linked-List%2F</url>
     <content type="text"><![CDATA[Problem Reverse a singly linked list. Solution Iterative12345678910111213class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ prev = None while head: curr = head head = head.next curr.next = prev prev = curr return prev Recursive1234567891011121314class Solution(object): def reverseList(self, head): """ :type head: ListNode :rtype: ListNode """ return self._reverse(head) def _reverse(self, node, prev = None): if not node: return prev n = node.next node.next = prev return self._reverse(n, node)]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -235,7 +235,7 @@
     <url>%2F2017%2F09%2F05%2F70-Climbing-Stairs%2F</url>
     <content type="text"><![CDATA[Problem You are climbing a stair case. It takes n steps to reach to the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top? Note: Given n will be a positive integer. Solution]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -258,7 +258,7 @@
     <url>%2F2017%2F08%2F28%2F266-Palindrome-Permutation%2F</url>
     <content type="text"><![CDATA[Problem Given a string, determine if a permutation of the string could form a palindrome. For example,“code” -&gt; False, “aab” -&gt; True, “carerac” -&gt; True. Solution CommonThe most common way to solve this problem will be using stack. If a new letter is found, push it into the stack, then pop it out whenever it appears the second time. OptimizedUsing dictionary will be the best solution. Store each letter as a key and the value is the count of its appearance. It is a little faster in this way because the time complexity of search is O(1). Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Palindrome_Permutation.py]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -288,10 +288,10 @@
   </entry>
   <entry>
     <title><![CDATA[41. First Missing Positive]]></title>
-    <url>%2F2017%2F08%2F17%2FFirst-Missing-Positive%2F</url>
+    <url>%2F2017%2F08%2F17%2F41-First-Missing-Positive%2F</url>
     <content type="text"><![CDATA[Problem Given an unsorted integer array, find the first missing positive integer. For example,Given [1,2,0] return 3,and [3,4,-1,1] return 2. Your algorithm should run in O(n) time and uses constant space. SolutionPut Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/First_Missing_Positive.py]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -299,10 +299,10 @@
   </entry>
   <entry>
     <title><![CDATA[31 & 46 & 47 & 60. Permutations]]></title>
-    <url>%2F2017%2F08%2F16%2FPermutations%2F</url>
+    <url>%2F2017%2F08%2F16%2F31-46-47-60-Permutations%2F</url>
     <content type="text"><![CDATA[ProblemThis contains: 31 Next Permutation46 Permutations47 Permutations II60 Permutation Sequence 31. Next Permutation Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers. If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order). The replacement must be in-place, do not allocate extra memory. Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column. 1,2,3 → 1,3,23,2,1 → 1,2,31,1,5 → 1,5,1 Solution]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -310,10 +310,10 @@
   </entry>
   <entry>
     <title><![CDATA[1. Two Sum]]></title>
-    <url>%2F2017%2F08%2F16%2FTwo-Sum%2F</url>
+    <url>%2F2017%2F08%2F16%2F1-Two-Sum%2F</url>
     <content type="text"><![CDATA[Problem Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. Example:Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9,return [0, 1]. SolutionThis appears to be the first and easiest problem on Leetcode. Most people will use the brute force way to solve this problem. However, it is not time efficient. The best way to solve this is using dictionary which means the time efficiency of checking is O(1). Each time a new number is found, it will be added in the dictionary as value while the key is the difference between this number and target. Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/twoSum.py]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -321,10 +321,10 @@
   </entry>
   <entry>
     <title><![CDATA[19. Remove Nth From End]]></title>
-    <url>%2F2017%2F08%2F15%2FRemove-Nth-From-End%2F</url>
+    <url>%2F2017%2F08%2F15%2F19-Remove-Nth-From-End%2F</url>
     <content type="text"><![CDATA[Problem Given a linked list, remove the nth node from the end of list and return its head. For example, Given linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5, and n = 2. After removing the second node from the end, the linked list becomes 1-&gt;2-&gt;3-&gt;5. Note:Given n will always be valid.Try to do this in one pass. Solution:Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Remove_Nth_From_End.py]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
