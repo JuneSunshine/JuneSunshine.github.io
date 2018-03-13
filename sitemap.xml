@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2018/03/13/Machine-Learning-Algorithm-SVM/</loc>
+    <loc>http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/</loc>
     
-    <lastmod>2018-03-13T15:14:48.484Z</lastmod>
+    <lastmod>2018-03-13T15:26:56.701Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/</loc>
     
-    <lastmod>2018-03-08T23:08:22.820Z</lastmod>
+    <lastmod>2018-03-13T15:17:15.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/</loc>
+    
+    <lastmod>2018-03-13T15:17:13.644Z</lastmod>
     
   </url>
   

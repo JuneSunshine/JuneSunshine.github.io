@@ -102,7 +102,7 @@
 <link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Pythonic," />
+  <meta name="keywords" content="Big Data,Machine Learning," />
 
 
 
@@ -118,18 +118,18 @@
 
 
 
-<meta name="description" content="Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10):    print (i) For strings, we can directly iterate through the list: 123club_list = [&apos;C">
-<meta name="keywords" content="Pythonic">
+<meta name="description" content="Points to remember Make data based decisions The big pattern (try them all) Unit testing (start with small program &amp;amp; grow it) Learn from mistakes Practice finding debugger  Data LagTime between wh">
+<meta name="keywords" content="Big Data,Machine Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pythonic: Use Enumerate() Instead of Range()">
-<meta property="og:url" content="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/index.html">
+<meta property="og:title" content="Big Data Analytics Notes(Part 1)">
+<meta property="og:url" content="http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10):    print (i) For strings, we can directly iterate through the list: 123club_list = [&apos;C">
+<meta property="og:description" content="Points to remember Make data based decisions The big pattern (try them all) Unit testing (start with small program &amp;amp; grow it) Learn from mistakes Practice finding debugger  Data LagTime between wh">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-04T04:21:35.000Z">
+<meta property="og:updated_time" content="2018-03-13T15:26:56.701Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pythonic: Use Enumerate() Instead of Range()">
-<meta name="twitter:description" content="Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10):    print (i) For strings, we can directly iterate through the list: 123club_list = [&apos;C">
+<meta name="twitter:title" content="Big Data Analytics Notes(Part 1)">
+<meta name="twitter:description" content="Points to remember Make data based decisions The big pattern (try them all) Unit testing (start with small program &amp;amp; grow it) Learn from mistakes Practice finding debugger  Data LagTime between wh">
 
 
 
@@ -160,13 +160,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/"/>
 
 
 
 
 
-  <title>Pythonic: Use Enumerate() Instead of Range() | JuneSunshine's Blog</title>
+  <title>Big Data Analytics Notes(Part 1) | JuneSunshine's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -375,7 +375,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuneSunshine">
@@ -392,7 +392,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Pythonic: Use Enumerate() Instead of Range()</h1>
+          <h1 class="post-title" itemprop="name headline">Big Data Analytics Notes(Part 1)</h1>
         
 
         <div class="post-meta">
@@ -404,8 +404,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T14:19:34-04:00">
-                2017-10-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-13T11:16:16-04:00">
+                2018-03-13
               </time>
             
 
@@ -427,7 +427,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tech/" itemprop="url" rel="index">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Notes/Tech/" itemprop="url" rel="index">
                     <span itemprop="name">Tech</span>
                   </a>
                 </span>
@@ -445,8 +456,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/" itemprop="commentCount">0</span> comments
+                <a href="/2018/03/13/Big-Data-Analytics-Notes-Part-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -479,21 +490,23 @@
       
 
       
-        <h2><span id="try-enumerate-more">Try enumerate() more</span></h2><p>When iterating through integers, the built-in range function is useful:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    <span class="keyword">print</span> (i)</div></pre></td></tr></table></figure>
-<p>For strings, we can directly iterate through the list:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">club_list = [<span class="string">'Chelsea'</span>, <span class="string">'Liverpool'</span>, <span class="string">'Barcelona'</span>, <span class="string">'Juventus'</span>]</div><div class="line"><span class="keyword">for</span> club <span class="keyword">in</span> club_list:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%s is the best!"</span> % club)</div></pre></td></tr></table></figure>
-<p>Sometimes we want to know the index of current element in list while iterating. For example, print the ordered list of football clubs:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(club_list)):</div><div class="line">    club = club_list[i]</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%d: %s"</span> % (i+<span class="number">1</span>, club))</div></pre></td></tr></table></figure>
-<p>However, this method seems a little redundant and also hard to understand. In this situation, Python provides a built-in function: enumerate(). It is a simpler and more elegant way to deal with this.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i, club <span class="keyword">in</span> enumerate(club_list):</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%d: %s"</span> % (i+<span class="number">1</span>, club))</div><div class="line">&gt;&gt;&gt;</div><div class="line"><span class="number">1</span>: Chelsea</div><div class="line"><span class="number">2</span>: Liverpool</div><div class="line"><span class="number">3</span>: Barcelona</div><div class="line"><span class="number">4</span>: Juventus</div></pre></td></tr></table></figure>
-<p>We can even assign the starting value of counting, which will make the code even simpler:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i, club <span class="keyword">in</span> enumerate(cub_list, <span class="number">1</span>):</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%d: %s"</span> % (i, club))</div></pre></td></tr></table></figure>
-<h2><span id="key-points">Key Points:</span></h2><ul>
-<li>enumerate() offers a simple way of retrieving each element’s index during iteration</li>
-<li>Try to use enumerate() to replace range() if index is needed</li>
-<li>We can use a second parameter in enumerate() to assign the starting value of index (0 as default)</li>
-</ul>
+        <h4><span id="points-to-remember">Points to remember</span></h4><ol>
+<li>Make data based decisions</li>
+<li>The big pattern (try them all)</li>
+<li>Unit testing (start with small program &amp; grow it)</li>
+<li>Learn from mistakes</li>
+<li>Practice finding debugger</li>
+</ol>
+<h5><span id="data-lag">Data Lag</span></h5><p>Time between when you get data and time you can use it</p>
+<h4><span id="crisp-dm">CRISP-DM</span></h4><p>Short for <strong>Cross-Industry Standard Process for Data Mining</strong><br><strong>Process:</strong></p>
+<ol>
+<li>Business understanding</li>
+<li>Data understanding</li>
+<li>Data preparation &amp; data cleaning</li>
+<li>Modeling</li>
+<li>Evaluation</li>
+<li>Deployment</li>
+</ol>
 
       
     </div>
@@ -505,6 +518,23 @@
     
       <div>
         
+<div class="my_post_copyright">
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>Author:</strong>JuneSunshine
+      </li>
+      <li class="post-copyright-link">
+        <strong>URL:</strong>
+        <a href="/2018/03/13/Big-Data-Analytics-Notes-Part-1/" title="Big Data Analytics Notes(Part 1)">2018/03/13/Big-Data-Analytics-Notes-Part-1/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>License:</strong>
+        All articles from this blog, except for declared ones, use <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.en" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> License. 
+      </li>
+    </ul>
+</div>
+
+
       </div>
     
     
@@ -543,7 +573,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Pythonic/" rel="tag"># Pythonic</a>
+            <a href="/tags/Big-Data/" rel="tag"># Big Data</a>
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
           
         </div>
       
@@ -556,8 +588,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/03/Pythonic-Use-of-Zip-Function/" rel="next" title="Pythonic: Use of Zip Function">
-                <i class="fa fa-chevron-left"></i> Pythonic: Use of Zip Function
+              <a href="/2018/03/05/Machine-Learning-Algorithm-SVM/" rel="next" title="Machine Learning Algorithm: SVM">
+                <i class="fa fa-chevron-left"></i> Machine Learning Algorithm: SVM
               </a>
             
           </div>
@@ -565,10 +597,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/04/Pythonic-Unnecessary-Else/" rel="prev" title="Pythonic: Unnecessary Else">
-                Pythonic: Unnecessary Else <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -605,7 +633,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/"
+           data-href="http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -761,7 +789,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Try enumerate() more</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Key Points:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Points to remember</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">Data Lag</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">CRISP-DM</span></a></li></ol></div>
             
 
           </div>
@@ -937,9 +965,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/';
-          this.page.identifier = '2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/';
-          this.page.title = 'Pythonic: Use Enumerate() Instead of Range()';
+          this.page.url = 'http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/';
+          this.page.identifier = '2018/03/13/Big-Data-Analytics-Notes-Part-1/';
+          this.page.title = 'Big Data Analytics Notes(Part 1)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Vincent.disqus.com/embed.js';

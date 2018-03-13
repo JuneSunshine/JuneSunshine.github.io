@@ -102,7 +102,7 @@
 <link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Pythonic," />
+  <meta name="keywords" content="Machine Learning,Algorithm," />
 
 
 
@@ -118,18 +118,21 @@
 
 
 
-<meta name="description" content="Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10):    print (i) For strings, we can directly iterate through the list: 123club_list = [&apos;C">
-<meta name="keywords" content="Pythonic">
+<meta name="description" content="What is SVMSVM is short for Support Vector Machine. It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have)">
+<meta name="keywords" content="Machine Learning,Algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pythonic: Use Enumerate() Instead of Range()">
-<meta property="og:url" content="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/index.html">
+<meta property="og:title" content="Machine Learning Algorithm: SVM">
+<meta property="og:url" content="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10):    print (i) For strings, we can directly iterate through the list: 123club_list = [&apos;C">
+<meta property="og:description" content="What is SVMSVM is short for Support Vector Machine. It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have)">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-04T04:21:35.000Z">
+<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM1.png">
+<meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM2-850x578.png">
+<meta property="og:updated_time" content="2018-03-13T15:17:13.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pythonic: Use Enumerate() Instead of Range()">
-<meta name="twitter:description" content="Try enumerate() moreWhen iterating through integers, the built-in range function is useful: 12for i in range(10):    print (i) For strings, we can directly iterate through the list: 123club_list = [&apos;C">
+<meta name="twitter:title" content="Machine Learning Algorithm: SVM">
+<meta name="twitter:description" content="What is SVMSVM is short for Support Vector Machine. It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have)">
+<meta name="twitter:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM1.png">
 
 
 
@@ -160,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/"/>
 
 
 
 
 
-  <title>Pythonic: Use Enumerate() Instead of Range() | JuneSunshine's Blog</title>
+  <title>Machine Learning Algorithm: SVM | JuneSunshine's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -375,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuneSunshine">
@@ -392,7 +395,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Pythonic: Use Enumerate() Instead of Range()</h1>
+          <h1 class="post-title" itemprop="name headline">Machine Learning Algorithm: SVM</h1>
         
 
         <div class="post-meta">
@@ -404,8 +407,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T14:19:34-04:00">
-                2017-10-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-05T10:41:51-05:00">
+                2018-03-05
               </time>
             
 
@@ -445,8 +448,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/" itemprop="commentCount">0</span> comments
+                <a href="/2018/03/05/Machine-Learning-Algorithm-SVM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -479,21 +482,20 @@
       
 
       
-        <h2><span id="try-enumerate-more">Try enumerate() more</span></h2><p>When iterating through integers, the built-in range function is useful:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    <span class="keyword">print</span> (i)</div></pre></td></tr></table></figure>
-<p>For strings, we can directly iterate through the list:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">club_list = [<span class="string">'Chelsea'</span>, <span class="string">'Liverpool'</span>, <span class="string">'Barcelona'</span>, <span class="string">'Juventus'</span>]</div><div class="line"><span class="keyword">for</span> club <span class="keyword">in</span> club_list:</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%s is the best!"</span> % club)</div></pre></td></tr></table></figure>
-<p>Sometimes we want to know the index of current element in list while iterating. For example, print the ordered list of football clubs:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(club_list)):</div><div class="line">    club = club_list[i]</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%d: %s"</span> % (i+<span class="number">1</span>, club))</div></pre></td></tr></table></figure>
-<p>However, this method seems a little redundant and also hard to understand. In this situation, Python provides a built-in function: enumerate(). It is a simpler and more elegant way to deal with this.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i, club <span class="keyword">in</span> enumerate(club_list):</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%d: %s"</span> % (i+<span class="number">1</span>, club))</div><div class="line">&gt;&gt;&gt;</div><div class="line"><span class="number">1</span>: Chelsea</div><div class="line"><span class="number">2</span>: Liverpool</div><div class="line"><span class="number">3</span>: Barcelona</div><div class="line"><span class="number">4</span>: Juventus</div></pre></td></tr></table></figure>
-<p>We can even assign the starting value of counting, which will make the code even simpler:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i, club <span class="keyword">in</span> enumerate(cub_list, <span class="number">1</span>):</div><div class="line">    <span class="keyword">print</span> (<span class="string">"%d: %s"</span> % (i, club))</div></pre></td></tr></table></figure>
-<h2><span id="key-points">Key Points:</span></h2><ul>
-<li>enumerate() offers a simple way of retrieving each element’s index during iteration</li>
-<li>Try to use enumerate() to replace range() if index is needed</li>
-<li>We can use a second parameter in enumerate() to assign the starting value of index (0 as default)</li>
+        <h2><span id="what-is-svm">What is SVM</span></h2><p>SVM is short for Support Vector Machine. It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have) with the value of each feature being the value of a particular coordinate.</p>
+<p>For example, if we only had two features like Height and Hair length of an individual, we’d first plot these two variables in two dimensional space where each point has two co-ordinates (these co-ordinates are known as <strong>Support Vectors</strong>)</p>
+<p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM1.png" alt="SVM_example1"></p>
+<a id="more"></a>
+<p>Now, we will find some <em>line</em> that splits the data between the two differently classified groups of data. This will be the line such that the distances from the closest point in each of the two groups will be farthest away.</p>
+<p><img src="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM2-850x578.png" alt="SVM_example2"></p>
+<p>In the example shown above, the line which splits the data into two differently classified groups is the black line, since the two closest points are the farthest apart from the line. This line is our classifier. Then, depending on where the testing data lands on either side of the line, that’s what class we can classify the new data as.</p>
+<p><strong>Think of this algorithm as playing JezzBall in n-dimensional space. The tweaks in the game are:</strong></p>
+<ul>
+<li>You can draw lines / planes at any angles (rather than just horizontal or vertical as in classic game)</li>
+<li>The objective of the game is to segregate balls of different colors in different rooms</li>
+<li>And the balls are not moving</li>
 </ul>
+<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create SVM classification object </span></div><div class="line">model = svm.svc() <span class="comment"># there is various option associated with it, this is simple for classification. You can refer link, for mo# re detail.</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -543,7 +545,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Pythonic/" rel="tag"># Pythonic</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
           
         </div>
       
@@ -556,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/03/Pythonic-Use-of-Zip-Function/" rel="next" title="Pythonic: Use of Zip Function">
-                <i class="fa fa-chevron-left"></i> Pythonic: Use of Zip Function
+              <a href="/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/" rel="next" title="Machine Learning Algorithm: Decision Tree">
+                <i class="fa fa-chevron-left"></i> Machine Learning Algorithm: Decision Tree
               </a>
             
           </div>
@@ -566,8 +570,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/04/Pythonic-Unnecessary-Else/" rel="prev" title="Pythonic: Unnecessary Else">
-                Pythonic: Unnecessary Else <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/13/Big-Data-Analytics-Notes-Part-1/" rel="prev" title="Big Data Analytics Notes(Part 1)">
+                Big Data Analytics Notes(Part 1) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -605,7 +609,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/"
+           data-href="http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -761,7 +765,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Try enumerate() more</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Key Points:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>
@@ -937,9 +941,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/';
-          this.page.identifier = '2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/';
-          this.page.title = 'Pythonic: Use Enumerate() Instead of Range()';
+          this.page.url = 'http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/';
+          this.page.identifier = '2018/03/05/Machine-Learning-Algorithm-SVM/';
+          this.page.title = 'Machine Learning Algorithm: SVM';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Vincent.disqus.com/embed.js';
