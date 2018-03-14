@@ -118,18 +118,18 @@
 
 
 
-<meta name="description" content="GeneralWhat are parametric models? Give an exampleParametric models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples inclu">
+<meta name="description" content="GeneralEssential Machine Learning theory What is the difference between supervised and unsupervised machine learning?Supervised learning requires training labeled data. For example, in order to do cla">
 <meta name="keywords" content="Machine Learning,Q&amp;A">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Machine Learning Concepts Q&amp;A">
 <meta property="og:url" content="http://yoursite.com/2018/03/14/Machine-Learning-Concepts-Q-A/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="GeneralWhat are parametric models? Give an exampleParametric models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples inclu">
+<meta property="og:description" content="GeneralEssential Machine Learning theory What is the difference between supervised and unsupervised machine learning?Supervised learning requires training labeled data. For example, in order to do cla">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-14T05:40:49.848Z">
+<meta property="og:updated_time" content="2018-03-14T13:41:44.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Concepts Q&amp;A">
-<meta name="twitter:description" content="GeneralWhat are parametric models? Give an exampleParametric models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples inclu">
+<meta name="twitter:description" content="GeneralEssential Machine Learning theory What is the difference between supervised and unsupervised machine learning?Supervised learning requires training labeled data. For example, in order to do cla">
 
 
 
@@ -479,7 +479,9 @@
       
 
       
-        <h2><span id="general">General</span></h2><h4><span id="what-are-parametric-models-give-an-example">What are parametric models? Give an example</span></h4><p><em>Parametric</em> models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples include linear regression, logistic regression, and linear SVMs.</p>
+        <h2><span id="general">General</span></h2><p><em>Essential Machine Learning theory</em></p>
+<h4><span id="what-is-the-difference-between-supervised-and-unsupervised-machine-learning">What is the difference between supervised and unsupervised machine learning?</span></h4><p>Supervised learning requires training labeled data. For example, in order to do classification (a supervised learning task), you’ll need to first label the data you’ll use to train the model to classify data into your labeled groups. Unsupervised learning, in contrast, does not require labeling data explicitly.</p>
+<h4><span id="what-are-parametric-models-give-an-example">What are parametric models? Give an example</span></h4><p><em>Parametric</em> models are those with a finite number of parameters. To predict new data, you only need to know the parameters of the model. Examples include linear regression, logistic regression, and linear SVMs.</p>
 <p><em>Non-parametric</em> models are those with an unbounded number of parameters, allowing for more flexibility. To predict new data, you need to know the parameters of the model and the state of the data that has been observed. Examples include decision trees, k-nearest neighbors, and topic models using latent dirichlet analysis. </p>
 <h4><span id="what-is-the-curse-of-dimensionality">What is the “Curse of Dimensionality”?</span></h4><p>The difficulty of searching through a solution space becomes much harder as you have more features (dimensions).</p>
 <p>Consider the analogy of looking for a penny in a line vs. a field vs. a building. The more dimensions you have, the higher volume of data you’ll need.</p>
@@ -488,7 +490,11 @@
 <p>More complex models are more prone to being overfit (high variance) but they are expressive enough to get close to the truth (low bias).</p>
 <p>The best model for a given problem usually lies somewhere in the middle.</p>
 <a id="more"></a>
-<h2><span id="optimization">Optimization</span></h2>
+<h2><span id="optimization">Optimization</span></h2><p><em>Algorithms for finding the best parameters for a model</em></p>
+<h4><span id="what-is-the-difference-between-stochastic-gradient-descent-sgd-and-gradient-descent-gd">What is the difference between stochastic gradient descent (SGD) and gradient descent (GD)?</span></h4><p>Both algorithms are methods for finding a set of parameters that minimize a loss function by evaluating parameters against data and then making adjustments.</p>
+<p>In standard gradient descent, you’ll evaluate all training samples for each set of parameters. This is akin to taking big, slow steps toward the solution.</p>
+<p>In stochastic gradient descent, you’ll evaluate only 1 training sample for the set of parameters before updating them. This is akin to taking small, quick steps toward the solution</p>
+
       
     </div>
     
@@ -499,23 +505,6 @@
     
       <div>
         
-<div class="my_post_copyright">
-    <ul class="post-copyright">
-      <li class="post-copyright-author">
-          <strong>Author:</strong>JuneSunshine
-      </li>
-      <li class="post-copyright-link">
-        <strong>URL:</strong>
-        <a href="/2018/03/14/Machine-Learning-Concepts-Q-A/" title="Machine Learning Concepts Q&A">2018/03/14/Machine-Learning-Concepts-Q-A/</a>
-      </li>
-      <li class="post-copyright-license">
-        <strong>License:</strong>
-        All articles from this blog, except for declared ones, use <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.en" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> License. 
-      </li>
-    </ul>
-</div>
-
-
       </div>
     
     
@@ -770,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">General</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">What are parametric models? Give an example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">What is the “Curse of Dimensionality”?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">Explain the Bias-Variance Tradeoff</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Optimization</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">General</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">What is the difference between supervised and unsupervised machine learning?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">What are parametric models? Give an example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.3.</span> <span class="nav-text">What is the “Curse of Dimensionality”?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.4.</span> <span class="nav-text">Explain the Bias-Variance Tradeoff</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">What is the difference between stochastic gradient descent (SGD) and gradient descent (GD)?</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
