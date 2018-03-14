@@ -101,8 +101,13 @@
     <url>%2F2018%2F01%2F27%2FWhy-I-Prefer-VueJS%2F</url>
     <content type="text"><![CDATA[All contents below are concluded from my own experience. If anything related to Vue.js is not accurate, please leave a comment. Thanks! What is Vue.js? Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries. In a sentence, Vue.js can provide effective data binding and flexible components by using simple API. Why use Vue.js?Compared to Angularjs and Reactjs, Vue is famous for its easiness and lightweight. The features are: Lightweight Doubly data binding Everything is component]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Message</category>
       </categories>
+      <tags>
+        <tag>Vue.js</tag>
+        <tag>Javascript</tag>
+        <tag>Web Development</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Announcement: CV Website Updated]]></title>
@@ -301,10 +306,10 @@
   </entry>
   <entry>
     <title><![CDATA[21. Merge Two Sorted Lists]]></title>
-    <url>%2F2017%2F08%2F20%2FMerge-Two-Sorted-Lists%2F</url>
+    <url>%2F2017%2F08%2F20%2F21-Merge-Two-Sorted-Lists%2F</url>
     <content type="text"><![CDATA[Problem Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists. SolutionThe base condition is if list1 or list2 is empty, return the other list. Python code link:https://github.com/JuneSunshine/Optimized_Leetcode_Solution/blob/master/Merge_Two_Sorted_Lists.py]]></content>
       <categories>
-        <category>Tech</category>
+        <category>Coding Challenge</category>
       </categories>
       <tags>
         <tag>Leetcode</tag>
@@ -357,9 +362,9 @@
   <entry>
     <title><![CDATA[Magic Square]]></title>
     <url>%2F2017%2F08%2F14%2FMagic-Square-Algorithm-Study%2F</url>
-    <content type="text"><![CDATA[Philosophy In recreational mathematics, a magic square is a n times n square grid where n is the number of cells on each side filled with distinct positive integers in the range 1,2,…,n^2 such that each cell contains a different integer and the sum of the integers in each row, column and diagonal is equal.The sum is called the magic constant or magic sum of the magic square. A square grid with n cells on each side is said to have order n. MethodsThere are three different methods applied to solve this puzzle.First of all, all situations can be divided into three categories: Odd by Odd Mezirac method : Start with filling the middle slot of first row | 8 | 1 | 6 || — | — | — || 3 | 5 | 7 || 4 | 9 | 2 | Python code link:https://github.com/JuneSunshine/Magic_Square]]></content>
+    <content type="text"><![CDATA[Philosophy In recreational mathematics, a magic square is a n times n square grid where n is the number of cells on each side filled with distinct positive integers in the range 1,2,…,n^2 such that each cell contains a different integer and the sum of the integers in each row, column and diagonal is equal.The sum is called the magic constant or magic sum of the magic square. A square grid with n cells on each side is said to have order n. MethodsThere are three different methods applied to solve this puzzle.First of all, all situations can be divided into three categories: Odd by Odd Mezirac method : Start with filling the middle slot of first row | 8 | 1 | 6 | | --- | --- | --- | | 3 | 5 | 7 | | 4 | 9 | 2 | COMING SOON Python code link:https://github.com/JuneSunshine/Magic-Square]]></content>
       <categories>
-        <category>Tech</category>
+        <category>My Work</category>
       </categories>
       <tags>
         <tag>Algorithm</tag>
