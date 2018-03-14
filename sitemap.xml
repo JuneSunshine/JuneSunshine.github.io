@@ -4,14 +4,105 @@
   <url>
     <loc>http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/</loc>
     
-    <lastmod>2018-03-14T04:33:23.533Z</lastmod>
+    <lastmod>2018-03-14T05:01:39.260Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/</loc>
+    
+    <lastmod>2018-03-14T05:01:22.737Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/09/26/Pythonic-List-Comprehension/</loc>
+    
+    <lastmod>2018-03-14T05:01:15.109Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/07/Pythonic-List-Slice/</loc>
+    
+    <lastmod>2018-03-14T05:01:10.100Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/30/Pythonic-Map-Filter-and-Reduce/</loc>
+    
+    <lastmod>2018-03-14T05:01:03.508Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/04/Pythonic-Unnecessary-Else/</loc>
+    
+    <lastmod>2018-03-14T05:00:58.047Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/</loc>
+    
+    <lastmod>2018-03-14T05:00:52.338Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/10/03/Pythonic-Use-of-Zip-Function/</loc>
+    
+    <lastmod>2018-03-14T05:00:45.850Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/14/Machine-Learning-Concepts-Q-A/</loc>
+    
+    <lastmod>2018-03-14T05:00:26.288Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/04/Machine-Learning-Algorithms-Overview/</loc>
+    
+    <lastmod>2018-03-14T04:59:55.734Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/</loc>
+    
+    <lastmod>2018-03-14T04:59:46.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/</loc>
+    
+    <lastmod>2018-03-14T04:59:40.499Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/</loc>
+    
+    <lastmod>2018-03-14T04:59:32.590Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/</loc>
+    
+    <lastmod>2018-03-14T04:59:19.692Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2018/03/13/Machine-Learning-Algorithm-Naive-Bayes/</loc>
     
-    <lastmod>2018-03-13T18:26:02.322Z</lastmod>
+    <lastmod>2018-03-14T04:59:08.141Z</lastmod>
     
   </url>
   
@@ -93,41 +184,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/</loc>
-    
-    <lastmod>2018-03-13T15:17:15.433Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/</loc>
-    
-    <lastmod>2018-03-13T15:17:13.644Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/04/Machine-Learning-Algorithms-Overview/</loc>
-    
-    <lastmod>2018-03-07T18:08:48.748Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/</loc>
-    
-    <lastmod>2018-03-05T20:12:54.553Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/</loc>
-    
-    <lastmod>2018-03-05T20:12:35.301Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/08/28/To-My-Love-Chen/</loc>
     
     <lastmod>2018-03-05T16:17:20.123Z</lastmod>
@@ -156,58 +212,9 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/10/30/Pythonic-Map-Filter-and-Reduce/</loc>
-    
-    <lastmod>2017-11-01T16:17:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2017/08/14/Magic-Square-Algorithm-Study/</loc>
     
     <lastmod>2017-10-25T19:43:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/07/Pythonic-List-Slice/</loc>
-    
-    <lastmod>2017-10-11T04:25:09.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/04/Pythonic-Unnecessary-Else/</loc>
-    
-    <lastmod>2017-10-04T05:07:27.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/03/Pythonic-Use-of-Zip-Function/</loc>
-    
-    <lastmod>2017-10-04T04:34:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/03/Pythonic-Use-Enumerate-Instead-of-Range/</loc>
-    
-    <lastmod>2017-10-04T04:21:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/</loc>
-    
-    <lastmod>2017-10-01T04:48:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/09/26/Pythonic-List-Comprehension/</loc>
-    
-    <lastmod>2017-09-27T02:47:49.000Z</lastmod>
     
   </url>
   
