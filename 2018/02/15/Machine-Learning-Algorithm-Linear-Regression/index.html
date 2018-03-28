@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
 <meta property="og:description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-14T04:59:40.499Z">
+<meta property="og:updated_time" content="2018-03-16T03:57:19.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Algorithm: Linear Regression">
 <meta name="twitter:description" content="What is Linear RegressionLinear regression is used to estimate real values. Here, we establish relationship between independent and dependent variables by fitting a best line. This best line is known">
@@ -484,13 +484,26 @@
 <p>The best way to understand linear regression is to relive this experience of childhood. For example, we ask a child to arrange people in his class by increasing order of weight, without asking them their weights. What do you think the child will do? He / she would likely look at the height and build of people and arrange them using a combination of these visible parameters. This is linear regression in real life. The child has actually figured out that height and build would be positively correlated to the weight by a relationship, which looks like the equation above.</p>
 <p>In this equation:</p>
 <ul>
-<li>y - Dependent Varaible</li>
+<li>y - Dependent Variable</li>
 <li>a - Slope</li>
 <li>x - Independent Variable</li>
 <li>b - Intercept</li>
 </ul>
 <p>These coefficients a and b are derived based on minimizing the sum of squared difference of distance between data points and regression line.</p>
 <p>Linear Regression is of mainly two types: Simple Linear Regression and Multiple Linear Regression. Simple Linear Regression is characterized by one independent variable. While Multiple Linear Regression is characterized by multiple independent variables. While finding best fit line, you can fit a polynomial or curvilinear regression. And these are known as polynomial or curvilinear regression.</p>
+<h2><span id="pros-amp-cons">Pros &amp; Cons</span></h2><h4><span id="pros">Pros</span></h4><ul>
+<li>Very fast (runs in constant time)</li>
+<li>Easy to understand</li>
+<li>Less prone to overfitiing</li>
+</ul>
+<h4><span id="cons">Cons</span></h4><ul>
+<li>Unable to model complex relationships</li>
+<li>Unable to capture nonlinear relationships without first transforming the inputs</li>
+</ul>
+<h4><span id="good-at">Good At</span></h4><ul>
+<li>The first look at a dataset</li>
+<li>Numerical data with a lot of features</li>
+</ul>
 <h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</div><div class="line"><span class="comment"># Load Train and Test datasets</span></div><div class="line"><span class="comment"># Identify feature and response variable(s) and values must be numeric and numpy arrays</span></div><div class="line">x_train=input_variables_values_training_datasets</div><div class="line">y_train=target_variables_values_training_datasets</div><div class="line">x_test=input_variables_values_test_datasets</div><div class="line"><span class="comment"># Create linear regression object</span></div><div class="line">linear = linear_model.LinearRegression()</div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">linear.fit(x_train, y_train)</div><div class="line">linear.score(x_train, y_train)</div><div class="line"><span class="comment"># Equation coefficient and Intercept</span></div><div class="line">print(<span class="string">'Coefficient: \n'</span>, linear.coef_)</div><div class="line">print(<span class="string">'Intercept: \n'</span>, linear.intercept_)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= linear.predict(x_test)</div></pre></td></tr></table></figure>
 
       
@@ -658,7 +671,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -680,7 +693,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -761,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Linear Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Linear Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Pros & Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.2.</span> <span class="nav-text">Cons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.3.</span> <span class="nav-text">Good At</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>

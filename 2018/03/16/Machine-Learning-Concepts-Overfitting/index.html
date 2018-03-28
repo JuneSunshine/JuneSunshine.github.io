@@ -102,7 +102,7 @@
 <link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Pythonic," />
+  <meta name="keywords" content="Machine Learning,Overfitting," />
 
 
 
@@ -118,18 +118,20 @@
 
 
 
-<meta name="description" content="No More Than Two Expressions In List ComprehensionList comprehension supports multiple loops. For example: 12345matrix = [[1,2,3],[4,5,6],[7,8,9]]flat = [x for row in matrix for x in row]print (flat)&amp;">
-<meta name="keywords" content="Pythonic">
+<meta name="description" content="What is OverfittingIn statistics, overfitting is “the production of an analysis that corresponds too closely or exactly to a particular set of data, and may therefore fail to fit additional data or pr">
+<meta name="keywords" content="Machine Learning,Overfitting">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pythonic: List Comprehension Limits">
-<meta property="og:url" content="http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/index.html">
+<meta property="og:title" content="Machine Learning Concepts: Overfitting">
+<meta property="og:url" content="http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/index.html">
 <meta property="og:site_name" content="JuneSunshine&#39;s Blog">
-<meta property="og:description" content="No More Than Two Expressions In List ComprehensionList comprehension supports multiple loops. For example: 12345matrix = [[1,2,3],[4,5,6],[7,8,9]]flat = [x for row in matrix for x in row]print (flat)&amp;">
+<meta property="og:description" content="What is OverfittingIn statistics, overfitting is “the production of an analysis that corresponds too closely or exactly to a particular set of data, and may therefore fail to fit additional data or pr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-14T05:01:22.737Z">
+<meta property="og:image" content="https://i.stack.imgur.com/HH23h.png">
+<meta property="og:updated_time" content="2018-03-28T03:51:54.144Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pythonic: List Comprehension Limits">
-<meta name="twitter:description" content="No More Than Two Expressions In List ComprehensionList comprehension supports multiple loops. For example: 12345matrix = [[1,2,3],[4,5,6],[7,8,9]]flat = [x for row in matrix for x in row]print (flat)&amp;">
+<meta name="twitter:title" content="Machine Learning Concepts: Overfitting">
+<meta name="twitter:description" content="What is OverfittingIn statistics, overfitting is “the production of an analysis that corresponds too closely or exactly to a particular set of data, and may therefore fail to fit additional data or pr">
+<meta name="twitter:image" content="https://i.stack.imgur.com/HH23h.png">
 
 
 
@@ -160,13 +162,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/"/>
 
 
 
 
 
-  <title>Pythonic: List Comprehension Limits | JuneSunshine's Blog</title>
+  <title>Machine Learning Concepts: Overfitting | JuneSunshine's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -375,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="JuneSunshine">
@@ -392,7 +394,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Pythonic: List Comprehension Limits</h1>
+          <h1 class="post-title" itemprop="name headline">Machine Learning Concepts: Overfitting</h1>
         
 
         <div class="post-meta">
@@ -404,8 +406,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-27T15:45:59-04:00">
-                2017-09-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-16T09:27:37-04:00">
+                2018-03-16
               </time>
             
 
@@ -445,8 +447,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/27/Pythonic-List-Comprehension-Limits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/" itemprop="commentCount">0</span> comments
+                <a href="/2018/03/16/Machine-Learning-Concepts-Overfitting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -479,15 +481,12 @@
       
 
       
-        <h2><span id="no-more-than-two-expressions-in-list-comprehension">No More Than Two Expressions In List Comprehension</span></h2><p>List comprehension supports multiple loops. For example:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">matrix = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]]</div><div class="line">flat = [x <span class="keyword">for</span> row <span class="keyword">in</span> matrix <span class="keyword">for</span> x <span class="keyword">in</span> row]</div><div class="line"><span class="keyword">print</span> (flat)</div><div class="line">&gt;&gt;&gt;</div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]</div></pre></td></tr></table></figure>
-<p>Another example would be creating a two-layer depth new list by inputing list:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">squared = [[x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> row] <span class="keyword">for</span> row <span class="keyword">in</span> matrix]</div><div class="line">print(squared)</div><div class="line">&gt;&gt;&gt;</div><div class="line">[[<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>],[<span class="number">16</span>,<span class="number">25</span>,<span class="number">36</span>],[<span class="number">49</span>,<span class="number">64</span>,<span class="number">81</span>]]</div></pre></td></tr></table></figure>
-<p>If there is another loop in expression, list comprehension will become longer. It will be clearer only if splitting it into multiple lines:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">my_lists = [[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],...]</div><div class="line">flat = [x <span class="keyword">for</span> sublist1 <span class="keyword">in</span> my_lists</div><div class="line">        <span class="keyword">for</span> sublist2 <span class="keyword">in</span> sublist1</div><div class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> sublist2]</div></pre></td></tr></table></figure>
-<p>From above we can tell that list comprehension under this condition is not simpler than the common way.</p>
-<p>Therefore, it is not suggested that using list comprehension with more than two expressions.</p>
-
+        <h2><span id="what-is-overfitting">What is Overfitting</span></h2><div class="note default"><p>In statistics, overfitting is “the production of an analysis that corresponds too closely or exactly to a particular set of data, and may therefore fail to fit additional data or predict future observations reliably”. </p></div>
+<p>Overfitting is often caused by overtraining or the lack of training data. As the following figure shows, the model complexity increases, training error decreases but validation error starts to increase along the training process. The reason is this model is overtrained on training dataset but it won’t work well on other dataset.<br><img src="https://i.stack.imgur.com/HH23h.png" alt="Overfitting"></p>
+<a id="more"></a>
+<h2><span id="how-to-prevent-overfitting">How To Prevent Overfitting</span></h2><p>A concept needs to be clarified is that we usually have three types of dataset: train, validation and test. This validation dataset is for avoiding overfitting. </p>
+<p>There are a lot of methods to avoid overfitting: early stopping, data augmentation, regularization including L1, L2 (L2 regularization also called weight decay), dropout.</p>
+<h2><span id="l2-regularization-weight-decay">L2 Regularization (Weight Decay)</span></h2>
       
     </div>
     
@@ -498,6 +497,23 @@
     
       <div>
         
+<div class="my_post_copyright">
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+          <strong>Author:</strong>JuneSunshine
+      </li>
+      <li class="post-copyright-link">
+        <strong>URL:</strong>
+        <a href="/2018/03/16/Machine-Learning-Concepts-Overfitting/" title="Machine Learning Concepts: Overfitting">2018/03/16/Machine-Learning-Concepts-Overfitting/</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>License:</strong>
+        All articles from this blog, except for declared ones, use <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.en" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> License. 
+      </li>
+    </ul>
+</div>
+
+
       </div>
     
     
@@ -536,7 +552,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Pythonic/" rel="tag"># Pythonic</a>
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Overfitting/" rel="tag"># Overfitting</a>
           
         </div>
       
@@ -549,8 +567,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/26/Pythonic-List-Comprehension/" rel="next" title="Pythonic: List Comprehension">
-                <i class="fa fa-chevron-left"></i> Pythonic: List Comprehension
+              <a href="/2018/03/15/How-To-Choose-Proper-Machine-Learning-Algorithms/" rel="next" title="How To Choose Proper Machine Learning Algorithms">
+                <i class="fa fa-chevron-left"></i> How To Choose Proper Machine Learning Algorithms
               </a>
             
           </div>
@@ -558,10 +576,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/03/Pythonic-Use-of-Zip-Function/" rel="prev" title="Pythonic: Use of Zip Function">
-                Pythonic: Use of Zip Function <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -598,7 +612,7 @@
   <div class="comments" id="comments">
     
       <div class="fb-comments"
-           data-href="http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/"
+           data-href="http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -754,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">No More Than Two Expressions In List Comprehension</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Overfitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">How To Prevent Overfitting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">L2 Regularization (Weight Decay)</span></a></li></ol></div>
             
 
           </div>
@@ -930,9 +944,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2017/09/27/Pythonic-List-Comprehension-Limits/';
-          this.page.identifier = '2017/09/27/Pythonic-List-Comprehension-Limits/';
-          this.page.title = 'Pythonic: List Comprehension Limits';
+          this.page.url = 'http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/';
+          this.page.identifier = '2018/03/16/Machine-Learning-Concepts-Overfitting/';
+          this.page.title = 'Machine Learning Concepts: Overfitting';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://Vincent.disqus.com/embed.js';

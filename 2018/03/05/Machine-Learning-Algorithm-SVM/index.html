@@ -128,7 +128,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM1.png">
 <meta property="og:image" content="https://www.analyticsvidhya.com/wp-content/uploads/2015/08/SVM2-850x578.png">
-<meta property="og:updated_time" content="2018-03-14T04:59:19.692Z">
+<meta property="og:updated_time" content="2018-03-16T04:04:37.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Algorithm: SVM">
 <meta name="twitter:description" content="What is SVMSVM is short for Support Vector Machine. It is a classification method. In this algorithm, we plot each data item as a point in n-dimensional space (where n is number of features you have)">
@@ -495,7 +495,23 @@
 <li>The objective of the game is to segregate balls of different colors in different rooms</li>
 <li>And the balls are not moving</li>
 </ul>
-<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create SVM classification object </span></div><div class="line">model = svm.svc() <span class="comment"># there is various option associated with it, this is simple for classification. You can refer link, for mo# re detail.</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
+<h2><span id="pros-amp-cons">Pros &amp; Cons</span></h2><h4><span id="pros">Pros</span></h4><ul>
+<li>Can model complex nonlinear relationships</li>
+<li>Robust to noise (because they maximize margins)</li>
+</ul>
+<h4><span id="cons">Cons</span></h4><ul>
+<li>Need to select a good kernel function</li>
+<li>Model parameters are difficult to interpret</li>
+<li>Sometimes numerical stability problems</li>
+<li>Requires significant memory and processing power</li>
+</ul>
+<h4><span id="good-at">Good At</span></h4><ul>
+<li>Classifying proteins</li>
+<li>Text classification</li>
+<li>Image classification</li>
+<li>Handwriting recognition</li>
+</ul>
+<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create SVM classification object </span></div><div class="line">model = svm.svc() </div><div class="line"><span class="comment"># there is various option associated with it, this is simple for classification.</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -662,7 +678,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -684,7 +700,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -765,7 +781,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Pros & Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.2.</span> <span class="nav-text">Cons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.3.</span> <span class="nav-text">Good At</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>

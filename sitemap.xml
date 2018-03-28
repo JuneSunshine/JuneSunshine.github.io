@@ -2,9 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/</loc>
+    
+    <lastmod>2018-03-28T03:52:41.171Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/16/Machine-Learning-Concepts-Overfitting/</loc>
+    
+    <lastmod>2018-03-28T03:51:54.144Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/</loc>
+    
+    <lastmod>2018-03-16T13:24:03.406Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/</loc>
+    
+    <lastmod>2018-03-16T04:15:23.838Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/</loc>
+    
+    <lastmod>2018-03-16T04:04:37.213Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/</loc>
+    
+    <lastmod>2018-03-16T03:57:19.983Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/02/04/Machine-Learning-Algorithms-Overview/</loc>
+    
+    <lastmod>2018-03-15T23:17:08.238Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/14/Machine-Learning-Concepts-Q-A/</loc>
     
-    <lastmod>2018-03-14T13:41:44.182Z</lastmod>
+    <lastmod>2018-03-15T22:42:54.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/15/How-To-Choose-Proper-Machine-Learning-Algorithms/</loc>
+    
+    <lastmod>2018-03-15T15:26:40.598Z</lastmod>
     
   </url>
   
@@ -26,13 +82,6 @@
     <loc>http://yoursite.com/2017/08/20/21-Merge-Two-Sorted-Lists/</loc>
     
     <lastmod>2018-03-14T05:03:29.599Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/</loc>
-    
-    <lastmod>2018-03-14T05:01:39.260Z</lastmod>
     
   </url>
   
@@ -82,41 +131,6 @@
     <loc>http://yoursite.com/2017/10/03/Pythonic-Use-of-Zip-Function/</loc>
     
     <lastmod>2018-03-14T05:00:45.850Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/04/Machine-Learning-Algorithms-Overview/</loc>
-    
-    <lastmod>2018-03-14T04:59:55.734Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/28/Machine-Learning-Algorithm-Decision-Tree/</loc>
-    
-    <lastmod>2018-03-14T04:59:46.681Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/15/Machine-Learning-Algorithm-Linear-Regression/</loc>
-    
-    <lastmod>2018-03-14T04:59:40.499Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/02/21/Machine-Learning-Algorithm-Logistic-Regression/</loc>
-    
-    <lastmod>2018-03-14T04:59:32.590Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/03/05/Machine-Learning-Algorithm-SVM/</loc>
-    
-    <lastmod>2018-03-14T04:59:19.692Z</lastmod>
     
   </url>
   

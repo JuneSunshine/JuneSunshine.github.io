@@ -128,7 +128,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://www.thecrazyprogrammer.com/wp-content/uploads/2017/12/Machine-Learning-Algorithms-6.png">
 <meta property="og:image" content="https://lh5.ggpht.com/3SVImcfNtbt8tsmde6aTV2JAAmS2bHtuRBPxJQoxNwS8ZCmcj6wo6juMMT7p9yVPJgP1=h900">
-<meta property="og:updated_time" content="2018-03-14T04:59:46.681Z">
+<meta property="og:updated_time" content="2018-03-16T04:15:23.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Algorithm: Decision Tree">
 <meta name="twitter:description" content="What is Decision TreeDecision Tree is a type of supervised learning algorithm that is mostly used for classification problems. Surprisingly, it works for both categorical and continuous dependent vari">
@@ -487,7 +487,21 @@
 <p>In the image above, you can see that population is classified into four different groups based on multiple attributes to identify ‘if they will play or not’. To split the population into different heterogeneous groups, it uses various techniques like Gini, Information Gain, Chi-square, entropy.<br><a id="more"></a><br>The best way to understand how decision tree works, is to play Jezzball – a classic game from Microsoft (image below). Essentially, you have a room with moving walls and you need to create walls such that maximum area gets cleared off with out the balls.</p>
 <p><img src="https://lh5.ggpht.com/3SVImcfNtbt8tsmde6aTV2JAAmS2bHtuRBPxJQoxNwS8ZCmcj6wo6juMMT7p9yVPJgP1=h900" alt="Jezzball"></p>
 <p>So, every time you split the room with a wall, you are trying to create 2 different populations with in the same room. Decision trees work in very similar fashion by dividing a population in as different groups as possible.</p>
-<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create tree object </span></div><div class="line">model = tree.DecisionTreeClassifier(criterion=<span class="string">'gini'</span>) <span class="comment"># for classification, here you can change the algorithm as gini or entropy (information gain) by default it is gini  </span></div><div class="line"><span class="comment"># model = tree.DecisionTreeRegressor() for regression</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
+<h2><span id="pros-and-cons">Pros and Cons</span></h2><h4><span id="pros">Pros</span></h4><ul>
+<li>Fast</li>
+<li>Robust to noise and missing values</li>
+<li>Accurate</li>
+</ul>
+<h4><span id="cons">Cons</span></h4><ul>
+<li>Complex tress are hard to interpret</li>
+<li>Duplication within the same sub-tree is possible</li>
+</ul>
+<h4><span id="good-at">Good At</span></h4><ul>
+<li>Star classification</li>
+<li>Medical diagnosis</li>
+<li>Credit risk analysis</li>
+</ul>
+<h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="comment"># Import other necessary libraries like pandas, numpy...</span></div><div class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> tree</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create tree object </span></div><div class="line">model = tree.DecisionTreeClassifier(criterion=<span class="string">'gini'</span>) </div><div class="line"><span class="comment"># for classification, here you can change the algorithm as gini or entropy (information gain) by default it is gini  </span></div><div class="line"><span class="comment"># model = tree.DecisionTreeRegressor() for regression</span></div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -654,7 +668,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -676,7 +690,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -757,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Decision Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Decision Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Pros and Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.2.</span> <span class="nav-text">Cons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.3.</span> <span class="nav-text">Good At</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>

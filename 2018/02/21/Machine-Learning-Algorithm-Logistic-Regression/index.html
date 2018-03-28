@@ -127,7 +127,7 @@
 <meta property="og:description" content="What is Logistic RegressionMost importantly, this is a classification algorithm instead of a regression algorithm. It is used to estimate discrete values (Binary values, yes/no, true/false) based on g">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://lh3.googleusercontent.com/-pH3mQYG4V8U/Wp1uE6bFcPI/AAAAAAAAAi4/v4b3XBUitvE-EnkVc8NarKLUzZbGwToHQCHMYCw/I/Logistic_Regression.png">
-<meta property="og:updated_time" content="2018-03-14T04:59:32.590Z">
+<meta property="og:updated_time" content="2018-03-16T13:24:03.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Machine Learning Algorithm: Logistic Regression">
 <meta name="twitter:description" content="What is Logistic RegressionMost importantly, this is a classification algorithm instead of a regression algorithm. It is used to estimate discrete values (Binary values, yes/no, true/false) based on g">
@@ -489,6 +489,19 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">odds= p/ (<span class="number">1</span>-p) = probability of event occurrence / probability of <span class="keyword">not</span> event occurrence</div><div class="line">ln(odds) = ln(p/(<span class="number">1</span>-p))</div><div class="line">logit(p) = ln(p/(<span class="number">1</span>-p)) = b0+b1X1+b2X2+b3X3....+bkXk</div></pre></td></tr></table></figure>
 <p>Above, p is the probability of presence of the characteristic of interest. It chooses parameters that maximize the likelihood of observing the sample values rather than that minimize the sum of squared errors (like in ordinary regression).</p>
 <p><img src="https://lh3.googleusercontent.com/-pH3mQYG4V8U/Wp1uE6bFcPI/AAAAAAAAAi4/v4b3XBUitvE-EnkVc8NarKLUzZbGwToHQCHMYCw/I/Logistic_Regression.png" alt="Logistic_Regression"></p>
+<h2><span id="pros-amp-cons">Pros &amp; Cons</span></h2><h4><span id="pros">Pros</span></h4><ul>
+<li>Outputs have a nice probabilistic interpretation</li>
+<li>Can be regularized to avoid overfitting</li>
+<li>Can be updated easily with new data using stochastic gradient descent (SGD)</li>
+</ul>
+<h4><span id="cons">Cons</span></h4><ul>
+<li>Underperform when there are multiple or non-linear decision boundaries</li>
+<li>Not flexible enough to naturally capture more complex relationships</li>
+</ul>
+<h4><span id="good-at">Good At</span></h4><ul>
+<li>Ranking based on classification probability</li>
+<li>Softmax, as an extension of logistic regression, can be applied to multi-classification area such as handwriting recognition</li>
+</ul>
 <h2><span id="python-code-example">Python Code Example</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Import Library</span></div><div class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"><span class="comment"># Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset</span></div><div class="line"><span class="comment"># Create logistic regression object</span></div><div class="line">model = LogisticRegression()</div><div class="line"><span class="comment"># Train the model using the training sets and check score</span></div><div class="line">model.fit(X, y)</div><div class="line">model.score(X, y)</div><div class="line"><span class="comment"># Equation coefficient and Intercept</span></div><div class="line">print(<span class="string">'Coefficient: \n'</span>, model.coef_)</div><div class="line">print(<span class="string">'Intercept: \n'</span>, model.intercept_)</div><div class="line"><span class="comment"># Predict Output</span></div><div class="line">predicted= model.predict(x_test)</div></pre></td></tr></table></figure>
 
       
@@ -656,7 +669,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -678,7 +691,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -759,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Logistic Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">What is Logistic Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Pros & Cons</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.1.</span> <span class="nav-text">Pros</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.2.</span> <span class="nav-text">Cons</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.0.3.</span> <span class="nav-text">Good At</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Python Code Example</span></a></li></ol></div>
             
 
           </div>
