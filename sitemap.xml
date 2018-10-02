@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2017/10/04/Announcement-New-Project-Website/</loc>
+    
+    <lastmod>2018-10-02T00:55:07.713Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/03/13/Big-Data-Analytics-Notes-Part-1/</loc>
     
     <lastmod>2018-03-28T03:52:41.171Z</lastmod>
@@ -229,13 +236,6 @@
     <loc>http://yoursite.com/2018/01/14/Announcement-CV-Website-Updated/</loc>
     
     <lastmod>2018-01-22T16:27:52.546Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2017/10/04/Announcement-New-Project-Website/</loc>
-    
-    <lastmod>2018-01-22T16:26:58.654Z</lastmod>
     
   </url>
   
