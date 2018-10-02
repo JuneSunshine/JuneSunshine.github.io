@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Announcement: Website Status]]></title>
+    <url>%2F2018%2F10%2F01%2FAnnouncement-Website-Status%2F</url>
+    <content type="text"><![CDATA[Talkai.blog FoundedSince I am a machine learning enthusiast, and also a data scientist in real life, I founded a website which provides a specific place for AI study and discussion, and it is called TalkAI. Whoever is interested in AI and willing to share your knowledge or experience, please feel free to contact me via email which can be found on the new website. Hopefully, we can make TalkAI become a good place for all AI enthusiasts together. Plan For This WebsiteAs it is mentioned above, since there will be a new website for AI only, all the future articles about data science, machine learning and deep learning related posts will no longer be updated on this website.]]></content>
+      <categories>
+        <category>Message</category>
+      </categories>
+      <tags>
+        <tag>Announcements</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Machine Learning Concepts: Overfitting]]></title>
     <url>%2F2018%2F03%2F16%2FMachine-Learning-Concepts-Overfitting%2F</url>
     <content type="text"><![CDATA[What is OverfittingIn statistics, overfitting is “the production of an analysis that corresponds too closely or exactly to a particular set of data, and may therefore fail to fit additional data or predict future observations reliably”. Overfitting is often caused by overtraining or the lack of training data. As the following figure shows, the model complexity increases, training error decreases but validation error starts to increase along the training process. The reason is this model is overtrained on training dataset but it won’t work well on other dataset. How To Prevent OverfittingA concept needs to be clarified is that we usually have three types of dataset: train, validation and test. This validation dataset is for avoiding overfitting. There are a lot of methods to avoid overfitting: early stopping, data augmentation, regularization including L1, L2 (L2 regularization also called weight decay), dropout. L2 Regularization (Weight Decay)]]></content>
