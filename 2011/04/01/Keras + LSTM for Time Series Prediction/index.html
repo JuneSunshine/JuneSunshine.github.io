@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+<link href="/lib/nprogress/nprogress.css" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Machine Learning,Deep Learning," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Keras + LSTM for Time Series Prediction First of all, time series problem is a complex prediction problem unlike ordinary regression prediction model.  The input of time series prediction is a list of">
+<meta name="keywords" content="Machine Learning,Deep Learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keras + LSTM for Time Series Prediction">
+<meta property="og:url" content="http://yoursite.com/2011/04/01/Keras + LSTM for Time Series Prediction/index.html">
+<meta property="og:site_name" content="JuneSunshine&#39;s Blog">
+<meta property="og:description" content="Keras + LSTM for Time Series Prediction First of all, time series problem is a complex prediction problem unlike ordinary regression prediction model.  The input of time series prediction is a list of">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2011/04/01/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/stationary.jpg">
+<meta property="og:image" content="http://yoursite.com/2011/04/01/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/lstm_result.jpg">
+<meta property="og:updated_time" content="2019-04-02T03:06:10.124Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Keras + LSTM for Time Series Prediction">
+<meta name="twitter:description" content="Keras + LSTM for Time Series Prediction First of all, time series problem is a complex prediction problem unlike ordinary regression prediction model.  The input of time series prediction is a list of">
+<meta name="twitter:image" content="http://yoursite.com/2011/04/01/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/stationary.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2011/04/01/Keras + LSTM for Time Series Prediction/"/>
+
+
+
+
+
+  <title>Keras + LSTM for Time Series Prediction | JuneSunshine's Blog</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-104949884-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?36dfd3171309b17c3585de9c9714832f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="top-scroll-bar"></div>
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">JuneSunshine's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2011/04/01/Keras + LSTM for Time Series Prediction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="JuneSunshine">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JuneSunshine's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Keras + LSTM for Time Series Prediction</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2011-04-01T10:41:51-04:00">
+                2011-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Knowledge-Review/" itemprop="url" rel="index">
+                    <span itemprop="name">Knowledge Review</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2011/04/01/Keras + LSTM for Time Series Prediction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://yoursite.com/2011/04/01/Keras + LSTM for Time Series Prediction/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1><span id="keras-lstm-for-time-series-prediction">Keras + LSTM for Time Series Prediction</span></h1><hr>
+<p>First of all, time series problem is a complex prediction problem unlike ordinary regression prediction model.  The input of time series prediction is a list of time based numbers which has both continuity and randomness, so   it is more difficult compared to ordinary regression prediction.</p>
+<p>However, there happens to be a strong neural network which is  a fit for solving this problem: RNN (Recurrent Neural Networks). In the past few years, RNN has been proved successful in fields like voice recognition, translation, image description, etc, and more and more fields are involved.</p>
+<hr>
+<h2><span id="what-is-lstm">What is LSTM?</span></h2><p><strong>Long Short-Term Memory</strong> neural network is the full name of LSTM, which is a recurrent neural network applied in deep learning and it is known for the capability of learning long term dependent information. LSTM was first introduced by Hochreiter &amp; Schmidhuber in 1997, and improved by Alex Graves in recent years. LSTM has been widely used and achieved huge success in many cases. </p>
+<hr>
+<h2><span id="application-example">Application Example</span></h2><p>I will post an example of implementing LSTM using a dataset called “Sales of shampoo over a three year period”, which can be downloaded <a href="https://datamarket.com/data/set/22r0/sales-of-shampoo-over-a-three-year-period#!ds=22r0&amp;display=line" target="_blank" rel="external">here</a>.</p>
+<h3><span id="load-data">Load Data</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">dateparse = <span class="keyword">lambda</span> dates: pd.datetime.strptime(**<span class="string">'200'</span>**+dates, **<span class="string">'%Y-%m'</span>**)</div><div class="line"></div><div class="line">df = read_csv(<span class="string">'sales-of-shampoo-over-a-three-ye.csv'</span>,</div><div class="line">                 header=<span class="number">0</span>,parse_dates=[<span class="string">'Month'</span>],index_col=<span class="number">0</span>,</div><div class="line">                  date_parser=dateparse, nrows=<span class="number">36</span>)</div><div class="line">print(df.head())</div><div class="line">df.plot()</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<h3><span id="split-data">Split Data</span></h3><p>We need to split the data into two sets: training and test. How do we split them then? Because we are studying time series analysis, we should split  the data based on time. Here, we use the previous two years’ data as training dataset and the last year’s data as test dataset.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># split data into train and test</span></div><div class="line">X = df.values</div><div class="line">train, test = X[<span class="number">0</span>:<span class="number">-12</span>], X[<span class="number">-12</span>:]</div></pre></td></tr></table></figure>
+<p>We use walk-forward model validation to set up a rolling window for prediction. For instance, if we are using a year as prediction period, the very first past month will be removed and the latest month will be appended  in order to make the prediction period both close to the prediction date and also keep the integrity of prediction period. In this way,    we simulate a scenario which is very close to the real world. At last, we use RMSE as the metric of evaluating our model.</p>
+<h3><span id="persistence-model-forecast">Persistence Model Forecast</span></h3><p>The basic idea of persistence forecast is using results of (t-1) time series to predict current time’s (t) value. Therefore, the last observation is used for predicting current time’s value.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error</div><div class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="comment"># load dataset</span></div><div class="line">dateparse = <span class="keyword">lambda</span> dates: pd.datetime.strptime(**<span class="string">'200'</span>**+dates, **<span class="string">'%Y-%m'</span>**)</div><div class="line">df = pd.read_csv(<span class="string">'sales-of-shampoo-over-a-three-ye.csv'</span>,</div><div class="line">                 header=<span class="number">0</span>,parse_dates=[<span class="string">'Month'</span>],index_col=<span class="number">0</span>,</div><div class="line">                  date_parser=dateparse, nrows=<span class="number">36</span>)</div><div class="line"><span class="comment"># split data into train and test</span></div><div class="line">X = df.values</div><div class="line">train, test = X[<span class="number">0</span>:<span class="number">-12</span>], X[<span class="number">-12</span>:]</div><div class="line"><span class="comment"># walk-forward validation</span></div><div class="line">history = [x <span class="keyword">for</span> x <span class="keyword">in</span> train]</div><div class="line">predictions = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(test)):</div><div class="line">  <span class="comment"># make prediction</span></div><div class="line">  predictions.append(history[<span class="number">-1</span>])</div><div class="line">  <span class="comment"># observation</span></div><div class="line">  history.append(test[i])</div><div class="line"><span class="comment"># report performance</span></div><div class="line">rmse = sqrt(mean_squared_error(test, predictions))</div><div class="line">print(<span class="string">'RMSE: %.3f'</span> % rmse)</div><div class="line"><span class="comment"># line plot of observed vs predicted</span></div><div class="line">plt.plot(test)</div><div class="line">plt.plot(predictions)</div><div class="line">plt.show()</div><div class="line">``` </div><div class="line"></div><div class="line">RMSE <span class="keyword">is</span> <span class="number">136.761</span></div><div class="line">![](Keras%<span class="number">20</span>+%<span class="number">20L</span>STM%<span class="number">20</span><span class="keyword">for</span>%<span class="number">20</span>Time%<span class="number">20</span>Series%<span class="number">20</span>Prediction/RMSE.jpg)</div><div class="line"></div><div class="line"></div><div class="line">We have got a baseline model <span class="keyword">and</span> RMSE <span class="keyword">for</span> improving our prediction models, now we can start building LSTM model to do time series prediction.</div><div class="line"></div><div class="line"><span class="comment">### Data Processing</span></div><div class="line"></div><div class="line">In order to build a LSTM training model, data processing <span class="keyword">is</span> needed:</div><div class="line"><span class="number">1.</span> Convert time series problem to supervised learning problem</div><div class="line"><span class="number">2.</span> Time series stationary</div><div class="line"><span class="number">3.</span> Data standardization</div><div class="line"></div><div class="line"><span class="comment">##### Convert time series problem to supervised learning problem</span></div><div class="line"></div><div class="line">The conversion can be done by using the previous (t<span class="number">-1</span>) observation <span class="keyword">as</span> input feature X <span class="keyword">and</span> current (t) observation <span class="keyword">as</span> output Y.</div><div class="line">It <span class="keyword">is</span> a series of time based data which needs to be converted, so an obvious one-to-one input-output relationship like the real supervised learning cannot be established. Especially at the beginning <span class="keyword">or</span> end of the dataset, there will always be one position which cannot find the correspondence <span class="keyword">in</span> the datasets. In order to resolve this, a common solution <span class="keyword">is</span> to set the feature value at the beginning <span class="keyword">as</span> <span class="number">0</span>, then its corresponding output <span class="keyword">is</span> the first element <span class="keyword">in</span> time series.</div><div class="line"></div><div class="line">```python</div><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"></div><div class="line"><span class="comment"># frame a sequence as a supervised learning problem</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">timeseries_to_supervised</span><span class="params">(data, lag=<span class="number">1</span>)</span>:</span></div><div class="line">  df = pd.DataFrame(data)</div><div class="line">  columns = [df.shift(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, lag+<span class="number">1</span>)]</div><div class="line">  columns.append(df)</div><div class="line">  df = pd.concat(columns, axis=<span class="number">1</span>)</div><div class="line">  df.fillna(<span class="number">0</span>, inplace=<span class="keyword">True</span>)</div><div class="line">  <span class="keyword">return</span> df</div><div class="line"></div><div class="line"><span class="comment"># load dataset</span></div><div class="line">dateparse = <span class="keyword">lambda</span> dates: pd.datetime.strptime(<span class="string">'200'</span>+dates, <span class="string">'%Y-%m'</span>)</div><div class="line">df = pd.read_csv(<span class="string">'sales-of-shampoo-over-a-three-ye.csv'</span>,</div><div class="line">                 header=<span class="number">0</span>,parse_dates=[<span class="string">'Month'</span>],index_col=<span class="number">0</span>,</div><div class="line">                  date_parser=dateparse, nrows=<span class="number">36</span>)</div><div class="line"><span class="comment"># transform to supervised learning</span></div><div class="line">X = df.values</div><div class="line">supervised = timeseries_to_supervised(X, <span class="number">1</span>)</div><div class="line">print(supervised)</div></pre></td></tr></table></figure>
+<p>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">        0      0</div><div class="line">0     0.0  266.0</div><div class="line">1   266.0  145.9</div><div class="line">2   145.9  183.1</div><div class="line">3   183.1  119.3</div><div class="line">4   119.3  180.3</div><div class="line">5   180.3  168.5</div><div class="line">6   168.5  231.8</div><div class="line">7   231.8  224.5</div><div class="line">8   224.5  192.8</div><div class="line">9   192.8  122.9</div><div class="line">10  122.9  336.5</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<h5><span id="time-series-stationary">Time series stationary</span></h5><p>We can tell that the Y value is increasing along with time passing even though it is not very obvious. This is called non-stationary in time series problems.  The solution to this is finite difference.<br>(The concept of time series stationary will be explained in details in another post)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line"><span class="comment"># create a differenced series</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">difference</span><span class="params">(dataset, interval=<span class="number">1</span>)</span>:</span></div><div class="line">  diff = []</div><div class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(interval, len(dataset)):</div><div class="line">      value = dataset[i] - dataset[i - interval]</div><div class="line">      diff.append(value)</div><div class="line">  <span class="keyword">return</span> pd.Series(diff)</div><div class="line"></div><div class="line"><span class="comment"># invert differenced value</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">inverse_difference</span><span class="params">(history, yhat, interval=<span class="number">1</span>)</span>:</span></div><div class="line">  <span class="keyword">return</span> (yhat + history[-interval])</div><div class="line"></div><div class="line"><span class="comment"># load dataset</span></div><div class="line">dateparse = <span class="keyword">lambda</span> dates: pd.datetime.strptime(<span class="string">'200'</span>+dates, <span class="string">'%Y-%m'</span>)</div><div class="line">df = pd.read_csv(<span class="string">'sales-of-shampoo-over-a-three-ye.csv'</span>,</div><div class="line">                 header=<span class="number">0</span>,parse_dates=[<span class="string">'Month'</span>],index_col=<span class="number">0</span>,</div><div class="line">                  date_parser=dateparse, nrows=<span class="number">36</span>)</div><div class="line"></div><div class="line"><span class="comment"># transform to supervised learning</span></div><div class="line">X = df.values</div><div class="line">supervised = timeseries_to_supervised(X, <span class="number">1</span>)</div><div class="line">differenced = difference(df[<span class="string">'Sales of shampoo over a three year period'</span>], <span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="comment"># invert transform</span></div><div class="line">inverted = []</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(differenced)):</div><div class="line">    value = inverse_difference(df[<span class="string">'Sales of shampoo over a three year period'</span>], differenced[i], len(df)-i)</div><div class="line">    inverted.append(value)</div><div class="line">inverted = pd.Series(inverted)</div><div class="line">print(inverted.head())</div><div class="line">differenced.plot()</div><div class="line">plt.show()</div></pre></td></tr></table></figure>
+<p>Output:<br><img src="Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/stationary.jpg" alt=""></p>
+<h5><span id="data-standardization">Data Standardization</span></h5><p>Data standardization is able to improve speed and performance effectively before inputting data. Especially when we are using “sigmoid” or “tanh” as activation function which gives the biggest gradient around 0. </p>
+<p>Without standardization, it is possible to make the input of activation function (w1x1 + w2x2 + b) become so big or small that gradient will be close to 0.</p>
+<p>LSTM’s using “tanh” as activation function by default whose output is between -1 and 1.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div><div class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> MinMaxScaler</div><div class="line"></div><div class="line"><span class="comment"># load dataset</span></div><div class="line">dateparse = <span class="keyword">lambda</span> dates: pd.datetime.strptime(<span class="string">'200'</span>+dates, <span class="string">'%Y-%m'</span>)</div><div class="line">df = pd.read_csv(<span class="string">'sales-of-shampoo-over-a-three-ye.csv'</span>,</div><div class="line">                 header=<span class="number">0</span>,parse_dates=[<span class="string">'Month'</span>],index_col=<span class="number">0</span>,</div><div class="line">                  date_parser=dateparse, nrows=<span class="number">36</span>)</div><div class="line"><span class="keyword">print</span> (df.head())</div><div class="line"></div><div class="line">X = df.values</div><div class="line">X = X.reshape(len(X), <span class="number">1</span>)</div><div class="line">scaler = MinMaxScaler(feature_range=(<span class="number">-1</span>, <span class="number">1</span>))</div><div class="line">scaler = scaler.fit(X)</div><div class="line">scaled_X = scaler.transform(X)</div><div class="line">scaled_series = pd.Series(scaled_X[:, <span class="number">0</span>])</div><div class="line">print(scaled_series.head())</div><div class="line"><span class="comment"># invert transform</span></div><div class="line">inverted_X = scaler.inverse_transform(scaled_X)</div><div class="line">inverted_series = pd.Series(inverted_X[:, <span class="number">0</span>])</div><div class="line">print(inverted_series.head())</div><div class="line">``` </div><div class="line"></div><div class="line">Output:</div></pre></td></tr></table></figure>
+<pre><code>Sales of shampoo over a three year period
+</code></pre><p>Month<br>2001-01-01                                      266.0<br>2001-02-01                                      145.9<br>2001-03-01                                      183.1<br>2001-04-01                                      119.3<br>2001-05-01                                      180.3<br>0   -0.478585<br>1   -0.905456<br>2   -0.773236<br>3   -1.000000<br>4   -0.783188<br>dtype: float64<br>0    266.0<br>1    145.9<br>2    183.1<br>3    119.3<br>4    180.3<br>dtype: float64<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### Build LSTM Model</div><div class="line"></div><div class="line">Long-short term memory (LSTM) is a kind of recurrent neural networks (RNN). It has the capability of remembering longer sequence without relying on the lagged data from specific time window. In Keras, this is called “stateful”, so we need to set “stateful” to “True” when we define the LSTM layer.</div><div class="line"></div><div class="line">The required input matrix format for LSTM is : [sample, step, feature]. Therefore, transform is needed.</div><div class="line"></div><div class="line">##### Complete Code</div><div class="line">```python</div><div class="line">from math import sqrt</div><div class="line">import pandas as pd</div><div class="line">import numpy as np</div><div class="line">from matplotlib import pyplot as plt</div><div class="line">from sklearn.preprocessing import MinMaxScaler</div><div class="line">from sklearn.metrics import mean_squared_error</div><div class="line">from keras.models import Sequential</div><div class="line">from keras.layers import Dense, LSTM</div><div class="line"></div><div class="line"># frame a sequence as a supervised learning problem</div><div class="line">def timeseries_to_supervised(data, lag=1):</div><div class="line">  df = pd.DataFrame(data)</div><div class="line">  columns = [df.shift(i) for i in range(1, lag+1)]</div><div class="line">  columns.append(df)</div><div class="line">  df = pd.concat(columns, axis=1)</div><div class="line">  df.fillna(0, inplace=True)</div><div class="line">  return df</div><div class="line"></div><div class="line"># create a differenced series</div><div class="line">def difference(dataset, interval=1):</div><div class="line">  diff = []</div><div class="line">  for i in range(interval, len(dataset)):</div><div class="line">      value = dataset[i] - dataset[i - interval]</div><div class="line">      diff.append(value)</div><div class="line">  return pd.Series(diff)</div><div class="line"></div><div class="line"># invert differenced value</div><div class="line">def inverse_difference(history, yhat, interval=1):</div><div class="line">  return (yhat + history[-interval])</div><div class="line"></div><div class="line"># scale train and test data to [-1, 1]</div><div class="line">def scale(train, test):</div><div class="line">  # fit scaler</div><div class="line">  scaler = MinMaxScaler(feature_range=(-1, 1))</div><div class="line">  scaler = scaler.fit(train)</div><div class="line">  # transform train</div><div class="line">  train = train.reshape(train.shape[0], train.shape[1])</div><div class="line">  train_scaled = scaler.transform(train)</div><div class="line">  # transform test</div><div class="line">  test = test.reshape(test.shape[0], test.shape[1])</div><div class="line">  test_scaled = scaler.transform(test)</div><div class="line">  return scaler, train_scaled, test_scaled</div><div class="line"></div><div class="line"># inverse scaling for a forecasted value</div><div class="line">def invert_scale(scaler, X, value):</div><div class="line">  new_row = [x for x in X] + [value]</div><div class="line">  array = np.array(new_row)</div><div class="line">  array = array.reshape(1, len(array))</div><div class="line">  inverted = scaler.inverse_transform(array)</div><div class="line">  return inverted[0, -1]</div><div class="line"></div><div class="line"># fit an LSTM network to training data</div><div class="line">def fit_lstm(train, batch_size, nb_epoch, neurons):</div><div class="line">  X, y = train[:, 0:-1], train[:, -1]</div><div class="line">  X = X.reshape(X.shape[0], 1, X.shape[1])</div><div class="line">  model = Sequential()</div><div class="line">  model.add(LSTM(neurons, batch_input_shape=(batch_size, X.shape[1], X.shape[2]), stateful=True))</div><div class="line">  model.add(Dense(1))</div><div class="line">  model.compile(loss=&apos;mean_squared_error&apos;, optimizer=&apos;adam&apos;)</div><div class="line">  for i in range(nb_epoch):</div><div class="line">      model.fit(X, y, epochs=1, batch_size=batch_size, verbose=0, shuffle=False)</div><div class="line">      model.reset_states()</div><div class="line">  return model</div><div class="line"></div><div class="line"># make a one-step forecast</div><div class="line">def forecast_lstm(model, batch_size, X):</div><div class="line">  X = X.reshape(1, 1, len(X))</div><div class="line">  yhat = model.predict(X, batch_size=batch_size)</div><div class="line">  return yhat[0,0]</div><div class="line"></div><div class="line"></div><div class="line">if __name__ == &apos;__main__&apos;:</div><div class="line">    # load dataset</div><div class="line">    dateparse = lambda dates: pd.datetime.strptime(&apos;200&apos;+dates, &apos;%Y-%m&apos;)</div><div class="line">    df = pd.read_csv(&apos;sales-of-shampoo-over-a-three-ye.csv&apos;,</div><div class="line">                     header=0,parse_dates=[&apos;Month&apos;],index_col=0,</div><div class="line">                      date_parser=dateparse, nrows=36)</div><div class="line"></div><div class="line">    # transform data to be stationary</div><div class="line">    raw_values = df.values</div><div class="line">    diff_values = difference(raw_values, 1)</div><div class="line"></div><div class="line">    # transform data to be supervised learning</div><div class="line">    supervised = timeseries_to_supervised(diff_values, 1)</div><div class="line">    supervised_values = supervised.values</div><div class="line"></div><div class="line">    # split data into train and test-sets</div><div class="line">    train, test = supervised_values[0:-12], supervised_values[-12:]</div><div class="line"></div><div class="line">    # transform the scale of the data</div><div class="line">    scaler, train_scaled, test_scaled = scale(train, test)</div><div class="line"></div><div class="line">    # fit the model</div><div class="line">    lstm_model = fit_lstm(train_scaled, 1, 3000, 4)</div><div class="line">    # forecast the entire training dataset to build up state for forecasting</div><div class="line">    train_reshaped = train_scaled[:, 0].reshape(len(train_scaled), 1, 1)</div><div class="line">    lstm_model.predict(train_reshaped, batch_size=1)</div><div class="line"></div><div class="line">    # walk-forward validation on the test data</div><div class="line">    predictions = list()</div><div class="line">    for i in range(len(test_scaled)):</div><div class="line">        # make one-step forecast</div><div class="line">        X, y = test_scaled[i, 0:-1], test_scaled[i, -1]</div><div class="line">        yhat = forecast_lstm(lstm_model, 1, X)</div><div class="line">        # invert scaling</div><div class="line">        yhat = invert_scale(scaler, X, yhat)</div><div class="line">        # invert differencing</div><div class="line">        yhat = inverse_difference(raw_values, yhat, len(test_scaled) + 1 - i)</div><div class="line">        # store forecast</div><div class="line">        predictions.append(yhat)</div><div class="line">        expected = raw_values[len(train) + i + 1]</div><div class="line">        print(&apos;Month=%d, Predicted=%f, Expected=%f&apos; % (i + 1, yhat, expected))</div><div class="line"></div><div class="line">    # report performance</div><div class="line">    rmse = sqrt(mean_squared_error(raw_values[-12:], predictions))</div><div class="line">    print(&apos;Test RMSE: %.3f&apos; % rmse)</div><div class="line">    # line plot of observed vs predicted</div><div class="line">    plt.plot(raw_values[-12:])</div><div class="line">    plt.plot(predictions)</div><div class="line">    plt.show()</div></pre></td></tr></table></figure></p>
+<p>Output:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Month=1, Predicted=318.175130, Expected=339.700000</div><div class="line">Month=2, Predicted=368.691736, Expected=440.400000</div><div class="line">Month=3, Predicted=336.907276, Expected=315.900000</div><div class="line">Month=4, Predicted=402.039096, Expected=439.300000</div><div class="line">Month=5, Predicted=335.222122, Expected=401.300000</div><div class="line">Month=6, Predicted=445.295242, Expected=437.400000</div><div class="line">Month=7, Predicted=473.495851, Expected=575.500000</div><div class="line">Month=8, Predicted=463.667904, Expected=407.600000</div><div class="line">Month=9, Predicted=512.361444, Expected=682.000000</div><div class="line">Month=10, Predicted=403.660676, Expected=475.300000</div><div class="line">Month=11, Predicted=541.677008, Expected=581.300000</div><div class="line">Month=12, Predicted=512.846338, Expected=646.900000</div><div class="line">Test RMSE: 81.067</div></pre></td></tr></table></figure></p>
+<p><img src="Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/lstm_result.jpg" alt=""></p>
+<p>Apparently our LSTM model gives a better result than persistent model does, since the RMSE generated from LSTM is only 81.067 which is a lot less than 136.761.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    
+      <div>
+        
+      </div>
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="JuneSunshine WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/09/My-First-Blog/" rel="prev" title="My First Blog">
+                My First Blog <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="fb-comments"
+           data-href="http://yoursite.com/2011/04/01/Keras + LSTM for Time Series Prediction/"
+           data-numposts="10"
+           data-width="100%"
+           data-colorscheme="light">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="JuneSunshine" />
+          <p class="site-author-name" itemprop="name">JuneSunshine</p>
+           
+              <p class="site-description motion-element" itemprop="description">Geek For Geek!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">37</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://www.linkedin.com/in/jingyang-li-152511a8/" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                    
+                      LinkedIn
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/JuneSunshine" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Github
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:ljygeek@gmail.com" target="_blank" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      E-mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.lijingyang.me" target="_blank" title="CV">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      CV
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Keras + LSTM for Time Series Prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.1.</span> <span class="nav-text">What is LSTM?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.</span> <span class="nav-text">Application Example</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.1.</span> <span class="nav-text">Load Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.2.</span> <span class="nav-text">Split Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.</span> <span class="nav-text">Persistence Model Forecast</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.0.1.</span> <span class="nav-text">Time series stationary</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">1.2.3.0.2.</span> <span class="nav-text">Data Standardization</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JuneSunshine</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/nprogress/nprogress.js"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/custom/custom.js?v=5.1.2"></script>
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://Vincent.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2011/04/01/Keras + LSTM for Time Series Prediction/';
+          this.page.identifier = '2011/04/01/Keras + LSTM for Time Series Prediction/';
+          this.page.title = 'Keras + LSTM for Time Series Prediction';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://Vincent.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2011/04/01/Keras%20+%20LSTM%20for%20Time%20Series%20Prediction/</loc>
+    
+    <lastmod>2019-04-02T03:06:10.124Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2018/10/01/Announcement-Website-Status/</loc>
     
     <lastmod>2018-10-02T00:58:02.762Z</lastmod>
